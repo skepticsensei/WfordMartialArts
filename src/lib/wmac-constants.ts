@@ -6,7 +6,13 @@ export const SITE = {
     "A martial arts and wellness center in Weatherford, Texas specializing in Aikido, Judo, and Daito Ryu Aikijujutsu.",
   phone: "(817) 555-0123", // TODO: replace with real number
   email: "info@wfordmartialarts.com",
-  address: "Weatherford, TX", // TODO: replace with full street address
+  address: {
+    street: "111 West 4th St",
+    city: "Weatherford",
+    region: "TX",
+    postalCode: "76086",
+    country: "US",
+  },
   origin: "https://wfordmartialarts.com",
   // Social profiles for LocalBusiness "sameAs" — leave empty strings until real URLs exist
   social: {

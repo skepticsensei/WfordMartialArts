@@ -16,10 +16,11 @@ export default function StructuredData() {
     logo: `${SITE.origin}/logos/Weatherford_Martial_Arts.png`,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Weatherford",
-      addressRegion: "TX",
-      addressCountry: "US",
-      // TODO: add streetAddress and postalCode once real address is known
+      streetAddress: SITE.address.street,
+      addressLocality: SITE.address.city,
+      addressRegion: SITE.address.region,
+      postalCode: SITE.address.postalCode,
+      addressCountry: SITE.address.country,
     },
     areaServed: {
       "@type": "City",

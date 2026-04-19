@@ -32,7 +32,18 @@ export default function ContactPage() {
           <div className="md:col-span-2 space-y-6">
             <div>
               <h2 className="font-serif text-lg font-bold text-ink mb-2">Visit</h2>
-              <p className="text-sm text-ink/70">{SITE.address}</p>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                  `${SITE.address.street}, ${SITE.address.city}, ${SITE.address.region} ${SITE.address.postalCode}`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-ink/70 hover:text-red transition-colors"
+              >
+                {SITE.address.street}
+                <br />
+                {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
+              </a>
             </div>
             <div>
               <h2 className="font-serif text-lg font-bold text-ink mb-2">Call</h2>

@@ -99,7 +99,11 @@ export default function Footer() {
                   {SITE.email}
                 </a>
               </li>
-              <li className="text-rice/60">{SITE.address}</li>
+              <li className="text-rice/60">
+                {SITE.address.street}
+                <br />
+                {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
+              </li>
             </ul>
             <Link
               href={`${SITE.basePath}/contact`}

@@ -18,7 +18,7 @@ export default function Header() {
               {SITE.phone}
             </a>
             <span className="hidden sm:inline text-gray">|</span>
-            <span className="hidden sm:inline">{SITE.address}</span>
+            <span className="hidden sm:inline">{SITE.address.city}, {SITE.address.region}</span>
           </div>
           <Link
             href={`${SITE.basePath}/contact`}
