@@ -35,9 +35,9 @@ export default function Header() {
           <Image
             src="/logos/Weatherford_Martial_Arts.png"
             alt={SITE.name}
-            width={44}
-            height={44}
-            className="w-11 h-11"
+            width={64}
+            height={64}
+            className="w-14 h-14 md:w-16 md:h-16"
           />
           <div className="hidden sm:block">
             <div className="font-serif font-bold text-lg leading-tight text-ink">

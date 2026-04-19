@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-ink py-16 md:py-20">
+      <section className="bg-ink pt-2 pb-16 md:pt-3 md:pb-20">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <Image
             src="/logos/Weatherford_Martial_Arts.png"
             alt="WMAC Seal"
-            width={80}
-            height={80}
-            className="mx-auto mb-6 w-16 h-16"
+            width={240}
+            height={240}
+            className="mx-auto mb-2 md:mb-3 w-48 h-48 md:w-60 md:h-60"
           />
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
             About Our Dojo
