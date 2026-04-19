@@ -89,17 +89,6 @@ export default function HomePage() {
           <ScheduleTable />
         </div>
 
-        <div className="flex flex-wrap gap-3 text-xs mb-6">
-          <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 bg-ink/10 border border-ink/20"></span>
-            Martial Arts
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 bg-red-light border border-red/20"></span>
-            Karate University
-          </span>
-        </div>
-
         {justMove?.externalUrl && (
           <div className="bg-teal/5 border border-teal/20 p-4 mb-8 text-sm text-ink/70">
             <strong className="text-ink">Just Move Fitness</strong> classes are

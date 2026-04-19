@@ -1,10 +1,10 @@
 import { SCHEDULE } from "@/lib/wmac-constants";
 
 const groupColors: Record<string, string> = {
-  aikido: "bg-ink/10 text-ink border-ink/20",
-  judo: "bg-ink/10 text-ink border-ink/20",
-  "daito-ryu": "bg-ink/10 text-ink border-ink/20",
-  "karate-university": "bg-red-light text-red border-red/20",
+  aikido: "bg-red-light text-red border-red/20",
+  judo: "bg-red-light text-red border-red/20",
+  "daito-ryu": "bg-red-light text-red border-red/20",
+  "karate-university": "bg-green-light text-green border-green/30",
   "just-move": "bg-teal/10 text-teal border-teal/20",
   open: "bg-gray-light text-ink/60 border-gray",
 };

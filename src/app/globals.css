@@ -9,6 +9,8 @@
   --wmac-gray-light: #E8E3DA;
   --wmac-red-dark: #8A1720;
   --wmac-red-light: #F5E6E8;
+  --wmac-green: #5E8C3C;
+  --wmac-green-light: #E8F0D9;
 }
 
 @theme inline {
@@ -20,6 +22,8 @@
   --color-gray-light: var(--wmac-gray-light);
   --color-red-dark: var(--wmac-red-dark);
   --color-red-light: var(--wmac-red-light);
+  --color-green: var(--wmac-green);
+  --color-green-light: var(--wmac-green-light);
   --font-serif: var(--font-noto-serif-jp);
   --font-sans: var(--font-inter);
 }
