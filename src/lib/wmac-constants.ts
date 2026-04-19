@@ -118,7 +118,7 @@ export const HOSTED_GROUPS: {
     logo: "/logos/Just_Move_Fitness.svg",
     externalUrl: "https://autumnjustmovefitn.wixsite.com/just-move-fitness-wi",
     shortDescription:
-      "Movement-based wellness classes with Autumn Nelson. Functional fitness, flexibility, and holistic health for every body.",
+      "Movement-based wellness classes with Autumn Nelson. Functional fitness and flexibility.",
     description:
       "Just Move Fitness with Autumn Nelson offers movement-based wellness classes designed to improve functional fitness, flexibility, and overall well-being. Classes focus on accessible, body-positive movement that meets you where you are. Whether you're recovering from injury, starting your fitness journey, or looking to complement your martial arts training.",
     accent: "teal",
