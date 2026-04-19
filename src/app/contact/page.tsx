@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/wmac/ContactForm";
 import { SITE } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Contact Weatherford Martial Arts Center to book a free introductory session or ask about our Aikido, Judo, Daito Ryu, karate, or Just Move Health classes in Weatherford, TX.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (

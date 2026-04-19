@@ -3,7 +3,12 @@ import type { Metadata } from "next";
 import ScheduleTable from "@/components/wmac/ScheduleTable";
 import { SITE } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "Schedule" };
+export const metadata: Metadata = {
+  title: "Class Schedule",
+  description:
+    "Weekly class schedule at Weatherford Martial Arts Center: Aikido, Judo, Daito Ryu Aikijujutsu, karate, and Just Move Health wellness classes. Find a time that works for you.",
+  alternates: { canonical: "/schedule" },
+};
 
 export default function SchedulePage() {
   return (

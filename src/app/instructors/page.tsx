@@ -2,7 +2,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SITE, INSTRUCTORS } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "Instructors" };
+export const metadata: Metadata = {
+  title: "Our Instructors",
+  description:
+    "Meet the instructors behind Aikido, Judo, Daito Ryu Aikijujutsu, and wellness training at Weatherford Martial Arts Center in Weatherford, Texas.",
+  alternates: { canonical: "/instructors" },
+};
 
 export default function InstructorsPage() {
   return (

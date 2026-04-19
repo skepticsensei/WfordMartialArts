@@ -2,7 +2,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SITE, DISCIPLINES } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "Judo" };
+export const metadata: Metadata = {
+  title: "Judo Classes in Weatherford, TX",
+  description:
+    "Olympic-style Judo training in Weatherford, Texas. Throws, groundwork, and competition-ready grappling for all ages and fitness levels at Weatherford Martial Arts Center.",
+  alternates: { canonical: "/judo" },
+};
 
 export default function JudoPage() {
   const art = DISCIPLINES[1];

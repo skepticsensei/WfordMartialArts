@@ -4,9 +4,16 @@ export const SITE = {
   tagline: "Traditional Arts. Timeless Discipline.",
   description:
     "A martial arts and wellness center in Weatherford, Texas specializing in Aikido, Judo, and Daito Ryu Aikijujutsu.",
-  phone: "(817) 555-0123",
-  email: "info@weatherfordmartialarts.com",
-  address: "Weatherford, TX",
+  phone: "(817) 555-0123", // TODO: replace with real number
+  email: "info@weatherfordmartialarts.com", // TODO: confirm real email
+  address: "Weatherford, TX", // TODO: replace with full street address
+  origin: "https://wfordmartialarts.com",
+  // Social profiles for LocalBusiness "sameAs" — leave empty strings until real URLs exist
+  social: {
+    facebook: "", // TODO: e.g. "https://www.facebook.com/weatherfordmartialarts"
+    instagram: "", // TODO
+    youtube: "", // TODO
+  },
   basePath: "",
 };
 

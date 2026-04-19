@@ -2,7 +2,12 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SITE, DISCIPLINES } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "Aikido" };
+export const metadata: Metadata = {
+  title: "Aikido Classes in Weatherford, TX",
+  description:
+    "Learn Aikido at Weatherford Martial Arts Center. A defensive Japanese martial art emphasizing harmony, redirection of force, and self-defense without aggression. All levels welcome.",
+  alternates: { canonical: "/aikido" },
+};
 
 export default function AikidoPage() {
   const art = DISCIPLINES[0];

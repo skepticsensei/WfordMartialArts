@@ -3,7 +3,12 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { SITE, HOSTED_GROUPS } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "The Karate University" };
+export const metadata: Metadata = {
+  title: "The Karate University — Karate Classes in Weatherford, TX",
+  description:
+    "Structured karate instruction with clear belt progression for kids, teens, and adults. The Karate University program hosted at Weatherford Martial Arts Center.",
+  alternates: { canonical: "/karate-university" },
+};
 
 export default function KarateUniversityPage() {
   const group = HOSTED_GROUPS[0];

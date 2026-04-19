@@ -3,7 +3,12 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { SITE } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = {
+  title: "About Our Dojo",
+  description:
+    "A traditional Japanese martial arts dojo in Weatherford, Texas dedicated to Aikido, Judo, Daito Ryu Aikijujutsu, and community wellness. Learn about our mission and training philosophy.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (

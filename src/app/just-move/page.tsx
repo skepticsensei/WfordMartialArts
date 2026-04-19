@@ -3,7 +3,12 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { SITE, HOSTED_GROUPS } from "@/lib/wmac-constants";
 
-export const metadata: Metadata = { title: "Just Move Health" };
+export const metadata: Metadata = {
+  title: "Just Move Health — Wellness Classes in Weatherford, TX",
+  description:
+    "Movement-based wellness with Autumn Nelson. Functional fitness, flexibility, and holistic health classes for every body, hosted at Weatherford Martial Arts Center.",
+  alternates: { canonical: "/just-move" },
+};
 
 export default function JustMovePage() {
   const group = HOSTED_GROUPS[1];
