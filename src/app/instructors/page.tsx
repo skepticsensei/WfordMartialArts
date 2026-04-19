@@ -5,7 +5,7 @@ import { SITE, INSTRUCTORS } from "@/lib/wmac-constants";
 export const metadata: Metadata = {
   title: "Our Instructors",
   description:
-    "Meet the instructors behind Aikido, Judo, Daito Ryu Aikijujutsu, and wellness training at Weatherford Martial Arts Center in Weatherford, Texas.",
+    "Meet Sensei Nathan Himes, head instructor and founder of Weatherford Martial Arts Center — Rokudan in Tomiki Aikido, with over 17 years of teaching experience in Weatherford, Texas.",
   alternates: { canonical: "/instructors" },
 };
 

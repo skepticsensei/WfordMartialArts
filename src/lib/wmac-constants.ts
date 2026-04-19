@@ -162,16 +162,11 @@ export const SCHEDULE = [
 
 export const INSTRUCTORS = [
   {
-    name: "Head Instructor",
-    title: "Chief Instructor",
-    arts: ["Aikido", "Daito Ryu Aikijujutsu", "Judo"],
-    bio: "Decades of dedicated practice in traditional Japanese martial arts with direct lineage to founding masters. Committed to preserving authentic technique while making these arts accessible to the Weatherford community.",
-  },
-  {
-    name: "Autumn Nelson",
-    title: "Wellness Director",
-    arts: ["Just Move Fitness"],
-    bio: "Certified fitness and wellness professional passionate about making movement accessible to everyone. Specializes in functional fitness, flexibility, and holistic health approaches.",
+    name: "Sensei Nathan Himes",
+    title: "Head Instructor & Owner",
+    arts: ["Aikido", "Judo", "Daito Ryu Aikijujutsu"],
+    bio:
+      "Nathan has been teaching martial arts in Weatherford for over 17 years and is the founder of Weatherford Martial Arts Center. He began his Aikido practice as a young man and has continued deep study in the traditional Japanese arts ever since. He currently holds the rank of Rokudan (6th dan) in Tomiki Aikido and Shodan in Kodokan Judo, both from Kaze Uta Budokai, and Shodan in Daito Ryu Aikijujutsu from Kiyamakai. His ongoing study focuses on the internal principles of aiki — the subtle body mechanics that unify movement across all three arts — and on the preservation of classical Tomiki kata.",
   },
 ];
 
