@@ -10,7 +10,7 @@ export default function StructuredData() {
     alternateName: SITE.shortName,
     description: SITE.description,
     url: SITE.origin,
-    telephone: SITE.phone,
+    telephone: `+1${SITE.phone.replace(/\D/g, "")}`,
     email: SITE.email,
     image: `${SITE.origin}/logos/Weatherford_Martial_Arts.png`,
     logo: `${SITE.origin}/logos/Weatherford_Martial_Arts.png`,
