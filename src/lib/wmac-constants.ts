@@ -127,20 +127,20 @@ export const HOSTED_GROUPS: {
 
 export const SCHEDULE = [
   { day: "Monday", classes: [
-    { time: "5:30 - 6:00 PM", name: "Beginner Karate", group: "karate-university" },
+    { time: "5:30 - 6:00 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
   ]},
   { day: "Tuesday", classes: [
-    { time: "5:30 - 6:15 PM", name: "Beginner Karate", group: "karate-university" },
-    { time: "6:20 - 7:00 PM", name: "Kata Class", group: "karate-university" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
   { day: "Thursday", classes: [
-    { time: "5:30 - 6:15 PM", name: "Beginner Karate", group: "karate-university" },
-    { time: "6:20 - 7:00 PM", name: "Kata Class", group: "karate-university" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
   { day: "Saturday", classes: [
-    { time: "10:00 AM", name: "Kata Class", group: "karate-university" },
+    { time: "10:00 AM", name: "Kata Class - The Karate University", group: "karate-university" },
   ]},
 ];
 
