@@ -46,6 +46,28 @@ export default function InstructorsPage() {
                 ))}
               </div>
               <p className="text-sm text-ink/70 leading-relaxed">{inst.bio}</p>
+              {inst.media && inst.media.length > 0 && (
+                <div className="mt-6 pt-6 border-t border-gray">
+                  <h3 className="text-[10px] tracking-widest uppercase text-ink/50 mb-3">
+                    Featured
+                  </h3>
+                  <ul className="space-y-2">
+                    {inst.media.map((item) => (
+                      <li key={item.url}>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-red hover:text-red-dark transition-colors inline-flex items-center gap-1"
+                        >
+                          {item.label}
+                          <span aria-hidden="true">&rarr;</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           ))}
         </div>
