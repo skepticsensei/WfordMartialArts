@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { SITE, INSTRUCTORS } from "@/lib/wmac-constants";
 
@@ -12,11 +13,15 @@ export const metadata: Metadata = {
 export default function InstructorsPage() {
   return (
     <>
-      <section className="bg-ink py-16 md:py-20">
+      <section className="bg-ink pt-2 pb-16 md:pt-3 md:pb-20">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <div className="text-xs tracking-widest uppercase text-red mb-2">
-            Meet Our Team
-          </div>
+          <Image
+            src="/logos/Weatherford_Martial_Arts.png"
+            alt="WMAC Seal"
+            width={240}
+            height={240}
+            className="mx-auto mb-2 md:mb-3 w-48 h-48 md:w-60 md:h-60"
+          />
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
             Instructors
           </h1>
