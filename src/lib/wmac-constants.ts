@@ -3,7 +3,7 @@ export const SITE = {
   shortName: "WMAC",
   tagline: "Traditional Arts. Timeless Discipline.",
   description:
-    "A martial arts and wellness center in Weatherford, Texas specializing in Aikido, Judo, and Daito Ryu Aikijujutsu.",
+    "A martial arts and wellness center in Weatherford, Texas specializing in Aikido, Judo, and Aikijujutsu.",
   phone: "",
   email: "info@wfordmartialarts.com",
   address: {
