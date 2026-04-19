@@ -15,7 +15,7 @@ export default function ContactForm() {
 
     const formData = new FormData(e.currentTarget);
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "New inquiry from weatherfordmartialarts.com");
+    formData.append("subject", "New inquiry from wfordmartialarts.com");
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -103,7 +103,7 @@ export default function ContactForm() {
           <option value="">Select a program...</option>
           <option value="aikido">Aikido</option>
           <option value="judo">Judo</option>
-          <option value="daito-ryu">Daito Ryu Aikijujutsu</option>
+          <option value="daito-ryu">Aikijujutsu</option>
           <option value="karate">The Karate University</option>
           <option value="partner">Partnership / Host Program</option>
           <option value="general">General Inquiry</option>
