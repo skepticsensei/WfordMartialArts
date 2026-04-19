@@ -31,7 +31,7 @@ export default function Header() {
 
       {/* Main Nav */}
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href={SITE.basePath} className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logos/Weatherford_Martial_Arts.png"
             alt={SITE.name}

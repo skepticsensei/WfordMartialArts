@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Serif_JP } from "next/font/google";
+import Header from "@/components/wmac/Header";
+import Footer from "@/components/wmac/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,8 +16,12 @@ const notoSerifJP = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Skill Blend",
-  description: "Skill Blend - Community of Excellence",
+  title: {
+    default: "Weatherford Martial Arts Center",
+    template: "%s | Weatherford Martial Arts Center",
+  },
+  description:
+    "A martial arts and wellness center in Weatherford, Texas specializing in Aikido, Judo, and Daito Ryu Aikijujutsu.",
 };
 
 export default function RootLayout({
@@ -28,7 +34,11 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${notoSerifJP.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -7,18 +7,18 @@ export const SITE = {
   phone: "(817) 555-0123",
   email: "info@weatherfordmartialarts.com",
   address: "Weatherford, TX",
-  basePath: "/wfordmartialarts",
+  basePath: "",
 };
 
 export const NAV_LINKS = [
-  { label: "Home", href: SITE.basePath },
-  { label: "Disciplines", href: `${SITE.basePath}#disciplines` },
-  { label: "Programs", href: `${SITE.basePath}#programs` },
-  { label: "Schedule", href: `${SITE.basePath}/schedule` },
-  { label: "Start Here", href: `${SITE.basePath}/start-here` },
-  { label: "Instructors", href: `${SITE.basePath}/instructors` },
-  { label: "About", href: `${SITE.basePath}/about` },
-  { label: "Contact", href: `${SITE.basePath}/contact` },
+  { label: "Home", href: "/" },
+  { label: "Disciplines", href: "/#disciplines" },
+  { label: "Programs", href: "/#programs" },
+  { label: "Schedule", href: "/schedule" },
+  { label: "Start Here", href: "/start-here" },
+  { label: "Instructors", href: "/instructors" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const DISCIPLINES = [
