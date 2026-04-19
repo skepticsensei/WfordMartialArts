@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { SITE, HOSTED_GROUPS } from "@/lib/wmac-constants";
 
 export const metadata: Metadata = {
-  title: "The Karate University — Karate Classes in Weatherford, TX",
+  title: "The Karate University - Karate Classes in Weatherford, TX",
   description:
     "Structured karate instruction with clear belt progression for kids, teens, and adults. The Karate University program hosted at Weatherford Martial Arts Center.",
   alternates: { canonical: "/karate-university" },

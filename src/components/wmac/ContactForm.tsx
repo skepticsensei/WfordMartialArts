@@ -48,7 +48,7 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white border border-gray p-6 md:p-8 space-y-4">
-      {/* Honeypot — real users won't fill this, bots often will */}
+      {/* Honeypot - real users won't fill this, bots often will */}
       <input
         type="checkbox"
         name="botcheck"

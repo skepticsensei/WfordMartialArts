@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { SITE, HOSTED_GROUPS } from "@/lib/wmac-constants";
 
 export const metadata: Metadata = {
-  title: "Just Move Fitness — Wellness Classes in Weatherford, TX",
+  title: "Just Move Fitness - Wellness Classes in Weatherford, TX",
   description:
     "Movement-based wellness with Autumn Nelson. Functional fitness, flexibility, and holistic health classes for every body, hosted at Weatherford Martial Arts Center.",
   alternates: { canonical: "/just-move" },

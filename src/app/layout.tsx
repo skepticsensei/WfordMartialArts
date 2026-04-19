@@ -20,7 +20,7 @@ const notoSerifJP = Noto_Serif_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.origin),
   title: {
-    default: `${SITE.name} — Aikido, Judo & Daito Ryu in Weatherford, TX`,
+    default: `${SITE.name} - Aikido, Judo & Daito Ryu in Weatherford, TX`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE.origin,
     siteName: SITE.name,
-    title: `${SITE.name} — Aikido, Judo & Daito Ryu in Weatherford, TX`,
+    title: `${SITE.name} - Aikido, Judo & Daito Ryu in Weatherford, TX`,
     description: SITE.description,
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: `${SITE.name} — Aikido, Judo & Daito Ryu in Weatherford, TX`,
+    title: `${SITE.name} - Aikido, Judo & Daito Ryu in Weatherford, TX`,
     description: SITE.description,
     images: ["/logos/Weatherford_Martial_Arts.png"],
   },

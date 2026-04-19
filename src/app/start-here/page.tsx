@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { SITE } from "@/lib/wmac-constants";
 
 export const metadata: Metadata = {
-  title: "Start Here — New Student Guide",
+  title: "Start Here - New Student Guide",
   description:
     "New to martial arts in Weatherford? Our beginner guide walks you through your first class, what to wear, what to expect, and how to choose the right art for you.",
   alternates: { canonical: "/start-here" },

@@ -31,7 +31,7 @@ export default function AboutPage() {
       <section className="max-w-3xl mx-auto px-4 py-16 md:py-20">
         <div className="space-y-6 text-ink/80 leading-relaxed mb-12">
           <p>
-            Weatherford Martial Arts Center is more than a training facility &mdash; it is a
+            Weatherford Martial Arts Center is more than a training facility; it is a
             community dedicated to the study and preservation of traditional Japanese martial arts.
             Located in Weatherford, Texas, our dojo provides a focused, respectful environment
             where students of all backgrounds can pursue excellence in Aikido, Judo, and

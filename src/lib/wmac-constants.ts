@@ -14,7 +14,7 @@ export const SITE = {
     country: "US",
   },
   origin: "https://wfordmartialarts.com",
-  // Social profiles for LocalBusiness "sameAs" — leave empty strings until real URLs exist
+  // Social profiles for LocalBusiness "sameAs" - leave empty strings until real URLs exist
   social: {
     facebook: "", // TODO: e.g. "https://www.facebook.com/weatherfordmartialarts"
     instagram: "", // TODO
@@ -172,10 +172,10 @@ export const INSTRUCTORS: {
     title: "Head Instructor & Owner",
     arts: ["Aikido", "Judo", "Daito Ryu Aikijujutsu"],
     bio:
-      "Nathan has been teaching martial arts in Weatherford for over 17 years and is the founder of Weatherford Martial Arts Center. He began his Aikido practice as a young man and has continued deep study in the traditional Japanese arts ever since. He currently holds the rank of Rokudan (6th dan) in Tomiki Aikido and Shodan in Kodokan Judo, both from Kaze Uta Budokai, and Shodan in Daito Ryu Aikijujutsu from Kiyamakai. His ongoing study focuses on the internal principles of aiki — the subtle body mechanics that unify movement across all three arts — and on the preservation of classical Tomiki kata.",
+      "Nathan has been teaching martial arts in Weatherford for over 17 years and is the founder of Weatherford Martial Arts Center. He began his Aikido practice as a young man and has continued deep study in the traditional Japanese arts ever since. He currently holds the rank of Rokudan (6th dan) in Tomiki Aikido and Shodan in Kodokan Judo, both from Kaze Uta Budokai, and Shodan in Daito Ryu Aikijujutsu Kiyamakai. His ongoing study focuses on the internal principles of aiki, the subtle body mechanics that unify movement across all three arts, and on the preservation of classical Tomiki kata.",
     media: [
       {
-        label: "Developing Stronger Connection — 2024 Aiki Workshop (YouTube)",
+        label: "Developing Stronger Connection - 2024 Aiki Workshop (YouTube)",
         url: "https://youtu.be/R3aLS0L5lYU",
       },
       {
