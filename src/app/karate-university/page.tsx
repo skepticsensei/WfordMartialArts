@@ -22,17 +22,13 @@ export default function KarateUniversityPage() {
               Hosted at WMAC
             </span>
           </div>
-          <div className="mb-6">
-            <div className="inline-block bg-rice px-6 py-4">
-              <Image
-                src={group.logo}
-                alt={group.name}
-                width={200}
-                height={100}
-                className="h-20 w-auto"
-              />
-            </div>
-          </div>
+          <Image
+            src={group.logo}
+            alt={group.name}
+            width={200}
+            height={100}
+            className="mx-auto mb-6 h-20 w-auto invert"
+          />
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
             {group.name}
           </h1>
