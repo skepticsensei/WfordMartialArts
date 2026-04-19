@@ -21,13 +21,13 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 py-20 md:py-28 flex flex-col items-center text-center">
+      <div className="relative max-w-6xl mx-auto px-4 pt-2 pb-20 md:pt-3 md:pb-28 flex flex-col items-center text-center">
         <Image
           src="/logos/Weatherford_Martial_Arts.png"
           alt="Weatherford Martial Arts Center seal"
-          width={120}
-          height={120}
-          className="w-24 h-24 md:w-30 md:h-30 mb-8"
+          width={240}
+          height={240}
+          className="w-48 h-48 md:w-60 md:h-60 mb-2 md:mb-3"
           priority
         />
 
