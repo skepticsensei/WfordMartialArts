@@ -5,7 +5,7 @@ export const SITE = {
   description:
     "A martial arts and wellness center in Weatherford, Texas specializing in Aikido, Judo, and Daito Ryu Aikijujutsu.",
   phone: "(817) 555-0123", // TODO: replace with real number
-  email: "info@weatherfordmartialarts.com", // TODO: confirm real email
+  email: "info@wfordmartialarts.com",
   address: "Weatherford, TX", // TODO: replace with full street address
   origin: "https://wfordmartialarts.com",
   // Social profiles for LocalBusiness "sameAs" — leave empty strings until real URLs exist
