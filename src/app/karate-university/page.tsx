@@ -17,18 +17,22 @@ export default function KarateUniversityPage() {
     <>
       <section className="bg-ink py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 text-center">
-          <div className="inline-block bg-rice px-6 py-4 mb-6">
-            <Image
-              src={group.logo}
-              alt={group.name}
-              width={200}
-              height={100}
-              className="h-20 w-auto"
-            />
+          <div className="mb-4">
+            <span className="inline-block text-[10px] tracking-widest uppercase font-medium px-2 py-0.5 bg-red/20 text-red">
+              Hosted at WMAC
+            </span>
           </div>
-          <span className="inline-block text-[10px] tracking-widest uppercase font-medium px-2 py-0.5 bg-red/20 text-red mb-3">
-            Hosted at WMAC
-          </span>
+          <div className="mb-6">
+            <div className="inline-block bg-rice px-6 py-4">
+              <Image
+                src={group.logo}
+                alt={group.name}
+                width={200}
+                height={100}
+                className="h-20 w-auto"
+              />
+            </div>
+          </div>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
             {group.name}
           </h1>
