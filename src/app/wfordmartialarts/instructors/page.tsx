@@ -1,0 +1,59 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import { SITE, INSTRUCTORS } from "@/lib/wmac-constants";
+
+export const metadata: Metadata = { title: "Instructors" };
+
+export default function InstructorsPage() {
+  return (
+    <>
+      <section className="bg-ink py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <div className="text-xs tracking-widest uppercase text-red mb-2">
+            Meet Our Team
+          </div>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
+            Instructors
+          </h1>
+        </div>
+      </section>
+
+      <section className="max-w-3xl mx-auto px-4 py-16 md:py-20">
+        <div className="space-y-8">
+          {INSTRUCTORS.map((inst, i) => (
+            <div key={i} className="bg-white border border-gray p-6 md:p-8">
+              <div className="mb-4">
+                <h2 className="font-serif text-2xl font-bold text-ink">
+                  {inst.name}
+                </h2>
+                <div className="text-sm text-red font-medium tracking-wide uppercase">
+                  {inst.title}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {inst.arts.map((art) => (
+                  <span
+                    key={art}
+                    className="text-[10px] tracking-widest uppercase px-2 py-0.5 bg-rice border border-gray text-ink/60"
+                  >
+                    {art}
+                  </span>
+                ))}
+              </div>
+              <p className="text-sm text-ink/70 leading-relaxed">{inst.bio}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href={`${SITE.basePath}/contact`}
+            className="bg-red hover:bg-red-dark text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors"
+          >
+            Contact Our Team
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}

@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --wmac-ink: #171717;
+  --wmac-rice: #F7F3EB;
+  --wmac-red: #B21E2B;
+  --wmac-teal: #00C2CB;
+  --wmac-gray: #CFC8BC;
+  --wmac-gray-light: #E8E3DA;
+  --wmac-red-dark: #8A1720;
+  --wmac-red-light: #F5E6E8;
+}
+
+@theme inline {
+  --color-ink: var(--wmac-ink);
+  --color-rice: var(--wmac-rice);
+  --color-red: var(--wmac-red);
+  --color-teal: var(--wmac-teal);
+  --color-gray: var(--wmac-gray);
+  --color-gray-light: var(--wmac-gray-light);
+  --color-red-dark: var(--wmac-red-dark);
+  --color-red-light: var(--wmac-red-light);
+  --font-serif: var(--font-noto-serif-jp);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--wmac-rice);
+  color: var(--wmac-ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-noto-serif-jp), serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--wmac-rice);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--wmac-gray);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wmac-ink);
+}
