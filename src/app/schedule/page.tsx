@@ -6,7 +6,7 @@ import { SITE } from "@/lib/wmac-constants";
 export const metadata: Metadata = {
   title: "Class Schedule",
   description:
-    "Weekly class schedule at Weatherford Martial Arts Center: Aikido, Judo, Daito Ryu Aikijujutsu, karate, and Just Move Health wellness classes. Find a time that works for you.",
+    "Weekly class schedule at Weatherford Martial Arts Center: Aikido, Judo, Daito Ryu Aikijujutsu, karate, and Just Move Fitness wellness classes. Find a time that works for you.",
   alternates: { canonical: "/schedule" },
 };
 
@@ -40,7 +40,7 @@ export default function SchedulePage() {
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-3 h-3 bg-teal/10 border border-teal/20"></span>
-            Just Move Health
+            Just Move Fitness
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-3 h-3 bg-gray-light border border-gray"></span>

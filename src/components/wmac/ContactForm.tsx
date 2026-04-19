@@ -105,7 +105,7 @@ export default function ContactForm() {
           <option value="judo">Judo</option>
           <option value="daito-ryu">Daito Ryu Aikijujutsu</option>
           <option value="karate">The Karate University</option>
-          <option value="just-move">Just Move Health</option>
+          <option value="just-move">Just Move Fitness</option>
           <option value="general">General Inquiry</option>
         </select>
       </div>

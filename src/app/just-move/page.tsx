@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { SITE, HOSTED_GROUPS } from "@/lib/wmac-constants";
 
 export const metadata: Metadata = {
-  title: "Just Move Health — Wellness Classes in Weatherford, TX",
+  title: "Just Move Fitness — Wellness Classes in Weatherford, TX",
   description:
     "Movement-based wellness with Autumn Nelson. Functional fitness, flexibility, and holistic health classes for every body, hosted at Weatherford Martial Arts Center.",
   alternates: { canonical: "/just-move" },
@@ -58,12 +58,16 @@ export default function JustMovePage() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <Link
-            href={`${SITE.basePath}/contact`}
-            className="bg-teal hover:opacity-90 text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors text-center"
-          >
-            Join a Class
-          </Link>
+          {group.externalUrl && (
+            <a
+              href={group.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-teal hover:opacity-90 text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors text-center"
+            >
+              Visit Just Move Fitness &rarr;
+            </a>
+          )}
           <Link
             href={`${SITE.basePath}/schedule`}
             className="border border-gray hover:border-teal text-ink px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors text-center"

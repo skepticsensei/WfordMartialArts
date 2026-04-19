@@ -56,12 +56,23 @@ export default function Footer() {
             <ul className="space-y-2">
               {HOSTED_GROUPS.map((g) => (
                 <li key={g.slug}>
-                  <Link
-                    href={`${SITE.basePath}/${g.slug}`}
-                    className="text-sm hover:text-red transition-colors"
-                  >
-                    {g.name}
-                  </Link>
+                  {g.externalUrl ? (
+                    <a
+                      href={g.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm hover:text-red transition-colors"
+                    >
+                      {g.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={`${SITE.basePath}/${g.slug}`}
+                      className="text-sm hover:text-red transition-colors"
+                    >
+                      {g.name}
+                    </Link>
+                  )}
                 </li>
               ))}
               <li>

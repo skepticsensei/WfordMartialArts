@@ -9,6 +9,7 @@ interface ProgramCardProps {
   shortDescription: string;
   accent: "red" | "teal";
   leader?: string;
+  externalUrl?: string;
 }
 
 export default function ProgramCard({
@@ -18,16 +19,15 @@ export default function ProgramCard({
   shortDescription,
   accent,
   leader,
+  externalUrl,
 }: ProgramCardProps) {
   const borderColor = accent === "teal" ? "border-teal/30 hover:border-teal" : "border-red/30 hover:border-red";
   const tagColor = accent === "teal" ? "bg-teal/10 text-teal" : "bg-red-light text-red";
   const linkColor = accent === "teal" ? "text-teal" : "text-red";
+  const className = `group block bg-white border ${borderColor} p-6 md:p-8 transition-all hover:shadow-lg`;
 
-  return (
-    <Link
-      href={`${SITE.basePath}/${slug}`}
-      className={`group block bg-white border ${borderColor} p-6 md:p-8 transition-all hover:shadow-lg`}
-    >
+  const content = (
+    <>
       <div className="flex items-center gap-4 mb-4">
         <Image
           src={logo}
@@ -52,6 +52,25 @@ export default function ProgramCard({
       <div className={`mt-4 text-xs ${linkColor} font-medium tracking-wide uppercase group-hover:translate-x-1 transition-transform`}>
         Learn more &rarr;
       </div>
+    </>
+  );
+
+  if (externalUrl) {
+    return (
+      <a
+        href={externalUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={`${SITE.basePath}/${slug}`} className={className}>
+      {content}
     </Link>
   );
 }

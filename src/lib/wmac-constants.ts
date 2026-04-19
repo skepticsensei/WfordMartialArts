@@ -99,6 +99,7 @@ export const HOSTED_GROUPS: {
   description: string;
   accent: "red" | "teal";
   leader?: string;
+  externalUrl?: string;
 }[] = [
   {
     name: "The Karate University",
@@ -111,14 +112,15 @@ export const HOSTED_GROUPS: {
     accent: "red",
   },
   {
-    name: "Just Move Health",
+    name: "Just Move Fitness",
     slug: "just-move",
     leader: "Autumn Nelson",
     logo: "/logos/Just_Move_Fitness.svg",
+    externalUrl: "https://autumnjustmovefitn.wixsite.com/just-move-fitness-wi",
     shortDescription:
       "Movement-based wellness classes with Autumn Nelson. Functional fitness, flexibility, and holistic health for every body.",
     description:
-      "Just Move Health with Autumn Nelson offers movement-based wellness classes designed to improve functional fitness, flexibility, and overall well-being. Classes focus on accessible, body-positive movement that meets you where you are. Whether you're recovering from injury, starting your fitness journey, or looking to complement your martial arts training.",
+      "Just Move Fitness with Autumn Nelson offers movement-based wellness classes designed to improve functional fitness, flexibility, and overall well-being. Classes focus on accessible, body-positive movement that meets you where you are. Whether you're recovering from injury, starting your fitness journey, or looking to complement your martial arts training.",
     accent: "teal",
   },
 ];
@@ -168,7 +170,7 @@ export const INSTRUCTORS = [
   {
     name: "Autumn Nelson",
     title: "Wellness Director",
-    arts: ["Just Move Health"],
+    arts: ["Just Move Fitness"],
     bio: "Certified fitness and wellness professional passionate about making movement accessible to everyone. Specializes in functional fitness, flexibility, and holistic health approaches.",
   },
 ];
@@ -195,7 +197,7 @@ export const FAQS = [
     a: "Yes, we offer a complimentary introductory session so you can experience our training environment before committing. Contact us to schedule yours.",
   },
   {
-    q: "What are the Just Move Health classes like?",
-    a: "Just Move Health with Autumn Nelson offers accessible, movement-based fitness classes. Whether you're looking for morning energy, strength training, flexibility work, or weekend motivation, there's a class for you.",
+    q: "What are the Just Move Fitness classes like?",
+    a: "Just Move Fitness with Autumn Nelson offers accessible, movement-based fitness classes. Whether you're looking for morning energy, strength training, flexibility work, or weekend motivation, there's a class for you.",
   },
 ];
