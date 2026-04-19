@@ -22,7 +22,7 @@ export default function HomePage() {
             Traditional Japanese Martial Arts
           </h2>
           <p className="mt-3 text-ink/50 max-w-xl mx-auto text-sm">
-            Three complementary paths rooted in centuries of tradition, each offering a unique approach to self-development and self-defense.
+            A unified path rooted in centuries of tradition, blending these complementary disciplines into a single approach to self-development and self-defense.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
