@@ -106,6 +106,7 @@ export default function ContactForm() {
           <option value="daito-ryu">Daito Ryu Aikijujutsu</option>
           <option value="karate">The Karate University</option>
           <option value="just-move">Just Move Fitness</option>
+          <option value="partner">Partnership / Host Program</option>
           <option value="general">General Inquiry</option>
         </select>
       </div>

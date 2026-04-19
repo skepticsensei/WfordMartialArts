@@ -12,6 +12,7 @@ const ROUTES = [
   { path: "/just-move", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/instructors", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" as const },
+  { path: "/partner", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.9, changeFrequency: "monthly" as const },
 ];
 

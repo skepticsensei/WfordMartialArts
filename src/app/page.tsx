@@ -53,6 +53,18 @@ export default function HomePage() {
             <ProgramCard key={g.slug} {...g} />
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-sm text-ink/60 mb-3">
+            Teach martial arts, movement, or wellness? Our space is open to new partners.
+          </p>
+          <Link
+            href={`${SITE.basePath}/partner`}
+            className="inline-block border border-ink/20 hover:border-red hover:text-red text-ink px-5 py-2.5 text-xs font-medium tracking-wide uppercase transition-colors"
+          >
+            Become a Community Partner
+          </Link>
+        </div>
       </section>
 
       {/* Divider */}
