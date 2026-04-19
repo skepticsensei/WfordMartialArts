@@ -175,6 +175,10 @@ export const INSTRUCTORS: {
       "Nathan has been teaching martial arts in Weatherford for over 17 years and is the founder of Weatherford Martial Arts Center. He began his Aikido practice as a young man and has continued deep study in the traditional Japanese arts ever since. He currently holds the rank of Rokudan (6th dan) in Tomiki Aikido and Shodan in Kodokan Judo, both from Kaze Uta Budokai, and Shodan in Daito Ryu Aikijujutsu from Kiyamakai. His ongoing study focuses on the internal principles of aiki — the subtle body mechanics that unify movement across all three arts — and on the preservation of classical Tomiki kata.",
     media: [
       {
+        label: "Developing Stronger Connection — 2024 Aiki Workshop (YouTube)",
+        url: "https://youtu.be/R3aLS0L5lYU",
+      },
+      {
         label: "Interview on Aiki in Aikido and Daito-ryu (MAYTT, 2024)",
         url: "https://maytt.home.blog/2024/05/02/interview-with-longtime-aiki-practitioner-nathan-himes-aiki-in-aikido-and-daito-ryu/",
       },
