@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import ScheduleTable from "@/components/wmac/ScheduleTable";
-import { SITE } from "@/lib/wmac-constants";
+import { SITE, HOSTED_GROUPS } from "@/lib/wmac-constants";
 
 export const metadata: Metadata = {
   title: "Class Schedule",
@@ -38,15 +38,23 @@ export default function SchedulePage() {
             <span className="w-3 h-3 bg-red-light border border-red/20"></span>
             Karate University
           </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 bg-teal/10 border border-teal/20"></span>
-            Just Move Fitness
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 bg-gray-light border border-gray"></span>
-            Open Mat
-          </span>
         </div>
+
+        {HOSTED_GROUPS.find((g) => g.slug === "just-move")?.externalUrl && (
+          <div className="bg-teal/5 border border-teal/20 p-4 mb-8 text-sm text-ink/70">
+            <strong className="text-ink">Just Move Fitness</strong> classes are
+            also held at this facility on a separate schedule.{" "}
+            <a
+              href={HOSTED_GROUPS.find((g) => g.slug === "just-move")!.externalUrl!}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal hover:underline"
+            >
+              See Autumn&apos;s site for current class times
+            </a>
+            .
+          </div>
+        )}
 
         <div className="text-center">
           <p className="text-sm text-ink/50 mb-4">

@@ -127,36 +127,20 @@ export const HOSTED_GROUPS: {
 
 export const SCHEDULE = [
   { day: "Monday", classes: [
-    { time: "6:00 AM", name: "Just Move - Morning Flow", group: "just-move" },
-    { time: "5:30 PM", name: "Kids Karate", group: "karate-university" },
-    { time: "6:30 PM", name: "Aikido", group: "aikido" },
-    { time: "7:30 PM", name: "Judo", group: "judo" },
+    { time: "5:30 - 6:00 PM", name: "Beginner Karate", group: "karate-university" },
   ]},
   { day: "Tuesday", classes: [
-    { time: "6:00 AM", name: "Just Move - Strength", group: "just-move" },
-    { time: "5:30 PM", name: "Kids Karate", group: "karate-university" },
-    { time: "6:30 PM", name: "Daito Ryu Aikijujutsu", group: "daito-ryu" },
-  ]},
-  { day: "Wednesday", classes: [
-    { time: "6:00 AM", name: "Just Move - Morning Flow", group: "just-move" },
-    { time: "5:30 PM", name: "Kids Karate", group: "karate-university" },
-    { time: "6:30 PM", name: "Aikido", group: "aikido" },
-    { time: "7:30 PM", name: "Judo", group: "judo" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate", group: "karate-university" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class", group: "karate-university" },
+    { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
   { day: "Thursday", classes: [
-    { time: "6:00 AM", name: "Just Move - Flexibility", group: "just-move" },
-    { time: "5:30 PM", name: "Kids Karate", group: "karate-university" },
-    { time: "6:30 PM", name: "Daito Ryu Aikijujutsu", group: "daito-ryu" },
-  ]},
-  { day: "Friday", classes: [
-    { time: "6:00 AM", name: "Just Move - HIIT", group: "just-move" },
-    { time: "5:30 PM", name: "Open Mat", group: "open" },
-    { time: "6:30 PM", name: "Aikido", group: "aikido" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate", group: "karate-university" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class", group: "karate-university" },
+    { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
   { day: "Saturday", classes: [
-    { time: "9:00 AM", name: "Judo", group: "judo" },
-    { time: "10:00 AM", name: "Daito Ryu Aikijujutsu", group: "daito-ryu" },
-    { time: "11:00 AM", name: "Just Move - Weekend Warrior", group: "just-move" },
+    { time: "10:00 AM", name: "Kata Class", group: "karate-university" },
   ]},
 ];
 
