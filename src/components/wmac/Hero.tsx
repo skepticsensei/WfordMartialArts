@@ -54,7 +54,7 @@ export default function Hero() {
             Book Intro Session
           </Link>
           <Link
-            href={`${SITE.basePath}/schedule`}
+            href="/#schedule"
             className="border border-rice/30 hover:border-rice/60 text-rice px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors"
           >
             View Schedule

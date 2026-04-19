@@ -5,13 +5,15 @@ import ProgramCard from "@/components/wmac/ProgramCard";
 import ScheduleTable from "@/components/wmac/ScheduleTable";
 import { SITE, DISCIPLINES, HOSTED_GROUPS, FAQS } from "@/lib/wmac-constants";
 
+const justMove = HOSTED_GROUPS.find((g) => g.slug === "just-move");
+
 export default function HomePage() {
   return (
     <>
       <Hero />
 
       {/* Disciplines */}
-      <section id="disciplines" className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <section id="disciplines" className="max-w-6xl mx-auto px-4 py-16 md:py-20 scroll-mt-24">
         <div className="text-center mb-10">
           <div className="text-xs tracking-widest uppercase text-red mb-2">
             Our Disciplines
@@ -36,7 +38,7 @@ export default function HomePage() {
       </div>
 
       {/* Hosted Programs */}
-      <section id="programs" className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      <section id="programs" className="max-w-6xl mx-auto px-4 py-16 md:py-20 scroll-mt-24">
         <div className="text-center mb-10">
           <div className="text-xs tracking-widest uppercase text-red mb-2">
             Programs in Residence
@@ -72,8 +74,8 @@ export default function HomePage() {
         <hr className="border-gray" />
       </div>
 
-      {/* Schedule Preview */}
-      <section className="max-w-6xl mx-auto px-4 py-16 md:py-20">
+      {/* Weekly Schedule */}
+      <section id="schedule" className="max-w-6xl mx-auto px-4 py-16 md:py-20 scroll-mt-24">
         <div className="text-center mb-10">
           <div className="text-xs tracking-widest uppercase text-red mb-2">
             Class Times
@@ -82,16 +84,48 @@ export default function HomePage() {
             Weekly Schedule
           </h2>
         </div>
-        <div className="bg-white border border-gray p-6 md:p-8">
-          <ScheduleTable compact />
-          <div className="mt-6 text-center">
-            <Link
-              href={`${SITE.basePath}/schedule`}
-              className="text-sm text-red font-medium tracking-wide uppercase hover:text-red-dark transition-colors"
+
+        <div className="bg-white border border-gray p-6 md:p-8 mb-6">
+          <ScheduleTable />
+        </div>
+
+        <div className="flex flex-wrap gap-3 text-xs mb-6">
+          <span className="flex items-center gap-1.5">
+            <span className="w-3 h-3 bg-ink/10 border border-ink/20"></span>
+            Martial Arts
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-3 h-3 bg-red-light border border-red/20"></span>
+            Karate University
+          </span>
+        </div>
+
+        {justMove?.externalUrl && (
+          <div className="bg-teal/5 border border-teal/20 p-4 mb-8 text-sm text-ink/70">
+            <strong className="text-ink">Just Move Fitness</strong> classes are
+            also held at this facility on a separate schedule.{" "}
+            <a
+              href={justMove.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal hover:underline"
             >
-              View Full Schedule &rarr;
-            </Link>
+              See Autumn&apos;s site for current class times
+            </a>
+            .
           </div>
+        )}
+
+        <div className="text-center">
+          <p className="text-sm text-ink/50 mb-4">
+            Schedule subject to change. Contact us for the most current information.
+          </p>
+          <Link
+            href={`${SITE.basePath}/contact`}
+            className="inline-block bg-red hover:bg-red-dark text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors"
+          >
+            Book a Class
+          </Link>
         </div>
       </section>
 

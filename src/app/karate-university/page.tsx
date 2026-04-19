@@ -62,7 +62,7 @@ export default function KarateUniversityPage() {
             Inquire About Classes
           </Link>
           <Link
-            href={`${SITE.basePath}/schedule`}
+            href="/#schedule"
             className="border border-gray hover:border-red text-ink px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors text-center"
           >
             View Schedule

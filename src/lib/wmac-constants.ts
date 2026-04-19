@@ -27,7 +27,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Disciplines", href: "/#disciplines" },
   { label: "Programs", href: "/#programs" },
-  { label: "Schedule", href: "/schedule" },
+  { label: "Schedule", href: "/#schedule" },
   { label: "Start Here", href: "/start-here" },
   { label: "Instructors", href: "/instructors" },
   { label: "About", href: "/about" },

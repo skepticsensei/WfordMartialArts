@@ -77,7 +77,7 @@ export default function Footer() {
               ))}
               <li>
                 <Link
-                  href={`${SITE.basePath}/schedule`}
+                  href="/#schedule"
                   className="text-sm hover:text-red transition-colors"
                 >
                   Schedule

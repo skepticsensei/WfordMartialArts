@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/wmac-constants";
 
 const ROUTES = [
-  { path: "/", priority: 1.0, changeFrequency: "monthly" as const },
-  { path: "/schedule", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
   { path: "/start-here", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/aikido", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/judo", priority: 0.8, changeFrequency: "monthly" as const },
