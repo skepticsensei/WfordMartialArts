@@ -45,15 +45,17 @@ export default function ContactPage() {
                 {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
               </a>
             </div>
-            <div>
-              <h2 className="font-serif text-lg font-bold text-ink mb-2">Call</h2>
-              <a
-                href={`tel:${SITE.phone}`}
-                className="text-sm text-red hover:text-red-dark transition-colors"
-              >
-                {SITE.phone}
-              </a>
-            </div>
+            {SITE.phone && (
+              <div>
+                <h2 className="font-serif text-lg font-bold text-ink mb-2">Call</h2>
+                <a
+                  href={`tel:${SITE.phone}`}
+                  className="text-sm text-red hover:text-red-dark transition-colors"
+                >
+                  {SITE.phone}
+                </a>
+              </div>
+            )}
             <div>
               <h2 className="font-serif text-lg font-bold text-ink mb-2">Email</h2>
               <a

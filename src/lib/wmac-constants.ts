@@ -4,7 +4,7 @@ export const SITE = {
   tagline: "Traditional Arts. Timeless Discipline.",
   description:
     "A martial arts and wellness center in Weatherford, Texas specializing in Aikido, Judo, and Daito Ryu Aikijujutsu.",
-  phone: "(682) 294-0470",
+  phone: "",
   email: "info@wfordmartialarts.com",
   address: {
     street: "111 West 4th St",

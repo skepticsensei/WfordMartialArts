@@ -14,10 +14,14 @@ export default function Header() {
       <div className="bg-ink text-rice text-sm">
         <div className="max-w-6xl mx-auto px-4 py-1.5 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <a href={`tel:${SITE.phone}`} className="hover:text-red-light transition-colors">
-              {SITE.phone}
-            </a>
-            <span className="hidden sm:inline text-gray">|</span>
+            {SITE.phone && (
+              <>
+                <a href={`tel:${SITE.phone}`} className="hover:text-red-light transition-colors">
+                  {SITE.phone}
+                </a>
+                <span className="hidden sm:inline text-gray">|</span>
+              </>
+            )}
             <span className="hidden sm:inline">{SITE.address.city}, {SITE.address.region}</span>
           </div>
           <Link

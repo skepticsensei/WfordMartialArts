@@ -100,11 +100,13 @@ export default function Footer() {
               Contact
             </h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <a href={`tel:${SITE.phone}`} className="hover:text-red transition-colors">
-                  {SITE.phone}
-                </a>
-              </li>
+              {SITE.phone && (
+                <li>
+                  <a href={`tel:${SITE.phone}`} className="hover:text-red transition-colors">
+                    {SITE.phone}
+                  </a>
+                </li>
+              )}
               <li>
                 <a href={`mailto:${SITE.email}`} className="hover:text-red transition-colors">
                   {SITE.email}

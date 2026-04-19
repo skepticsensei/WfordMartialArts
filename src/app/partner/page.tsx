@@ -104,12 +104,14 @@ export default function PartnerPage() {
             >
               Reach Out
             </Link>
-            <a
-              href={`tel:${SITE.phone.replace(/\D/g, "")}`}
-              className="border border-gray hover:border-red text-ink px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors"
-            >
-              Call {SITE.phone}
-            </a>
+            {SITE.phone && (
+              <a
+                href={`tel:${SITE.phone.replace(/\D/g, "")}`}
+                className="border border-gray hover:border-red text-ink px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors"
+              >
+                Call {SITE.phone}
+              </a>
+            )}
           </div>
         </div>
       </section>
