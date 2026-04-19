@@ -46,8 +46,7 @@ export default function AboutPage() {
           <p>
             Beyond our core disciplines, we are proud to host partner programs that complement
             our mission. The Karate University brings structured karate training to our community,
-            while Just Move Fitness with Autumn Nelson offers wellness and fitness classes that
-            are open to everyone.
+            while Just Move Fitness with Autumn Nelson offers wellness and fitness classes.
           </p>
         </div>
 

@@ -5,7 +5,7 @@ import { SITE } from "@/lib/wmac-constants";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Weatherford Martial Arts Center to book a free introductory session or ask about our Aikido, Judo, Daito Ryu, karate, or Just Move Fitness classes in Weatherford, TX.",
+    "Contact Weatherford Martial Arts Center to book a free introductory session or ask about our Aikido, Judo, Daito Ryu, or karate classes in Weatherford, TX.",
   alternates: { canonical: "/contact" },
 };
 

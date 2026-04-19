@@ -8,7 +8,6 @@ const ROUTES = [
   { path: "/judo", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/daito-ryu", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/karate-university", priority: 0.7, changeFrequency: "monthly" as const },
-  { path: "/just-move", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/instructors", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/partner", priority: 0.7, changeFrequency: "monthly" as const },

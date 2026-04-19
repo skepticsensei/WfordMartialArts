@@ -191,8 +191,4 @@ export const FAQS = [
     q: "Is there a free trial class?",
     a: "Yes, we offer a complimentary introductory session so you can experience our training environment before committing. Contact us to schedule yours.",
   },
-  {
-    q: "What are the Just Move Fitness classes like?",
-    a: "Just Move Fitness with Autumn Nelson offers accessible, movement-based fitness classes. Whether you're looking for morning energy, strength training, flexibility work, or weekend motivation, there's a class for you.",
-  },
 ];
