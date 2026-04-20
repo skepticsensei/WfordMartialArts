@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE.origin,
     siteName: SITE.name,
-    title: `${SITE.name} - Aikido, Judo & Daito Ryu in Weatherford, TX`,
+    title: `${SITE.name} - Aikido, Judo & Aikijujutsu in Weatherford, TX`,
     description: SITE.description,
     images: [
       {
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: `${SITE.name} - Aikido, Judo & Daito Ryu in Weatherford, TX`,
+    title: `${SITE.name} - Aikido, Judo & Aikijujutsu in Weatherford, TX`,
     description: SITE.description,
     images: ["/logos/Weatherford_Martial_Arts.png"],
   },
