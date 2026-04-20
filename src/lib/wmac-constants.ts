@@ -16,7 +16,7 @@ export const SITE = {
   origin: "https://wfordmartialarts.com",
   // Social profiles for LocalBusiness "sameAs" - leave empty strings until real URLs exist
   social: {
-    facebook: "", // TODO: e.g. "https://www.facebook.com/weatherfordmartialarts"
+    facebook: "https://www.facebook.com/WeatherfordAiki", // TODO: e.g. "https://www.facebook.com/weatherfordmartialarts"
     instagram: "", // TODO
     youtube: "", // TODO
   },
