@@ -41,7 +41,7 @@ export default function Hero() {
         </p>
 
         <p className="max-w-xl text-rice/50 text-sm md:text-base mb-8 leading-relaxed">
-          Aikido &middot; Judo &middot; Daito Ryu Aikijujutsu
+          Aikido &middot; Judo &middot; Aikijujutsu
           <br />
           Weatherford, Texas
         </p>
