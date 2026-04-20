@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { SITE, DISCIPLINES } from "@/lib/wmac-constants";
 
 export const metadata: Metadata = {
-  title: "Daito Ryu Aikijujutsu in Weatherford, TX",
+  title: "Aikijujutsu in Weatherford, TX",
   description:
     "Train classical Japanese Daito Ryu Aikijujutsu, the parent art of Aikido, at Weatherford Martial Arts Center. Joint locks, throws, and the development of internal power (aiki) in an authentic lineage.",
   alternates: { canonical: "/daito-ryu" },
