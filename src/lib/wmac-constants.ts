@@ -72,7 +72,7 @@ export const DISCIPLINES = [
     icon: "\u67D4",
   },
   {
-    name: "Daito Ryu Aikijujutsu",
+    name: "Aikijujutsu",
     slug: "daito-ryu",
     japanese: "\u5927\u6771\u6D41\u5408\u6C17\u67D4\u8853",
     subtitle: "The Ancient Art of Aiki",
