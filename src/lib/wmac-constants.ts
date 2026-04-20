@@ -79,7 +79,7 @@ export const DISCIPLINES = [
     shortDescription:
       "A classical Japanese martial art and the root of modern Aikido. Emphasizes precise technique, internal power, and centuries of samurai tradition.",
     description:
-      "Daito Ryu Aikijujutsu is one of Japan's most revered classical martial traditions, with roots stretching back centuries. As the parent art of Aikido, it encompasses a vast curriculum of joint locks, throws, strikes, and weapons techniques. Training emphasizes the development of aiki \u2014 the subtle skill of disrupting an opponent's balance and power through internal body mechanics.",
+      "Aikijujutsu is one of Japan's most revered classical martial traditions, with roots stretching back centuries. As the parent art of Aikido, it encompasses a vast curriculum of joint locks, throws, strikes, and weapons techniques. Training emphasizes the development of aiki \u2014 the subtle skill of disrupting an opponent's balance and power through internal body mechanics.",
     forWhom: "Dedicated martial artists interested in classical Japanese budo and deep technical study",
     outcomes: [
       "Mastery of classical self-defense techniques",
