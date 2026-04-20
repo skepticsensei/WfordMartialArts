@@ -82,7 +82,7 @@ export default function InstructorsPage() {
             href={`${SITE.basePath}/contact`}
             className="bg-red hover:bg-red-dark text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors"
           >
-            Contact Our Team
+            Contact the Dojo
           </Link>
         </div>
       </section>
