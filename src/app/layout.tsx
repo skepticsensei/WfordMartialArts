@@ -20,7 +20,7 @@ const notoSerifJP = Noto_Serif_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.origin),
   title: {
-    default: `${SITE.name} - Aikido, Judo & Daito Ryu in Weatherford, TX`,
+    default: `${SITE.name} - Aikido, Judo & Aikijujutsu in Weatherford, TX`,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
