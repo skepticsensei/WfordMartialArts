@@ -7,7 +7,7 @@ interface ProgramCardProps {
   slug: string;
   logo: string;
   shortDescription: string;
-  accent: "red" | "teal";
+  accent: "red" | "teal" | "purple";
   leader?: string;
   externalUrl?: string;
 }
@@ -21,9 +21,26 @@ export default function ProgramCard({
   leader,
   externalUrl,
 }: ProgramCardProps) {
-  const borderColor = accent === "teal" ? "border-teal/30 hover:border-teal" : "border-red/30 hover:border-red";
-  const tagColor = accent === "teal" ? "bg-teal/10 text-teal" : "bg-red-light text-red";
-  const linkColor = accent === "teal" ? "text-teal" : "text-red";
+  const accentStyles = {
+    red: {
+      border: "border-red/30 hover:border-red",
+      tag: "bg-red-light text-red",
+      link: "text-red",
+    },
+    teal: {
+      border: "border-teal/30 hover:border-teal",
+      tag: "bg-teal/10 text-teal",
+      link: "text-teal",
+    },
+    purple: {
+      border: "border-purple/30 hover:border-purple",
+      tag: "bg-purple-light text-purple",
+      link: "text-purple",
+    },
+  }[accent];
+  const borderColor = accentStyles.border;
+  const tagColor = accentStyles.tag;
+  const linkColor = accentStyles.link;
   const className = `group block bg-white border ${borderColor} p-6 md:p-8 transition-all hover:shadow-lg`;
 
   const content = (

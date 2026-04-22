@@ -97,7 +97,7 @@ export const HOSTED_GROUPS: {
   logo: string;
   shortDescription: string;
   description: string;
-  accent: "red" | "teal";
+  accent: "red" | "teal" | "purple";
   leader?: string;
   externalUrl?: string;
 }[] = [
@@ -122,6 +122,16 @@ export const HOSTED_GROUPS: {
     description:
       "Just Move Fitness with Autumn Nelson offers movement-based wellness classes designed to improve functional fitness, flexibility, and overall well-being. Classes focus on accessible, body-positive movement that meets you where you are. Whether you're recovering from injury, starting your fitness journey, or looking to complement your martial arts training.",
     accent: "teal",
+  },
+  {
+    name: "Dark Veil Dance",
+    slug: "dark-veil-dance",
+    logo: "/logos/DarkVeilDance2nobg.png",
+    shortDescription:
+      "Expressive fusion dance blending styles and traditions into a movement practice that is equal parts artistry, storytelling, and community.",
+    description:
+      "Dark Veil Dance offers fusion dance instruction that draws from a range of traditions to create a movement vocabulary all its own. Classes emphasize creative expression, musicality, and confident embodiment, welcoming dancers who want to explore beyond the boundaries of any single style. Whether you are new to dance or bringing years of experience from other forms, Dark Veil Dance is a space to move, create, and connect.",
+    accent: "purple",
   },
 ];
 
