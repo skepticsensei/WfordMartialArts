@@ -106,6 +106,7 @@ export default function ContactForm() {
           <option value="daito-ryu">Aikijujutsu</option>
           <option value="karate">The Karate University</option>
           <option value="partner">Partnership / Host Program</option>
+          <option value="dark-veil-dance">Dark Veil Dance</option>
           <option value="general">General Inquiry</option>
         </select>
       </div>
