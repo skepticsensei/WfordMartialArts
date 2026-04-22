@@ -23,11 +23,11 @@ export default function DarkVeilDancePage() {
             </span>
           </div>
           <Image
-            src={group.logo}
+            src="/logos/DarkVeilDance2wht.png"
             alt={group.name}
             width={240}
             height={120}
-            className="mx-auto mb-6 h-24 w-auto invert"
+            className="mx-auto mb-6 h-24 w-auto"
           />
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
             {group.name}
@@ -65,12 +65,6 @@ export default function DarkVeilDancePage() {
             className="bg-purple hover:bg-ink text-white px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors text-center"
           >
             Inquire About Classes
-          </Link>
-          <Link
-            href="/#schedule"
-            className="border border-gray hover:border-purple text-ink px-6 py-3 text-sm font-medium tracking-wide uppercase transition-colors text-center"
-          >
-            View Schedule
           </Link>
         </div>
       </section>
