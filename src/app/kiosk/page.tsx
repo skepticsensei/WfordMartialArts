@@ -7,8 +7,6 @@ import GlossaryRotator from "@/components/wmac/GlossaryRotator";
 import { SITE, HOSTED_GROUPS, PEACEFUL_STORM, QUOTES, DOJO_TERMS } from "@/lib/wmac-constants";
 import { getKioskPhotos } from "@/lib/kiosk-photos";
 
-export const dynamic = "force-dynamic";
-
 export default function KioskHomePage() {
   const photos = getKioskPhotos();
 
