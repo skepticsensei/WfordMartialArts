@@ -1,9 +1,12 @@
 import { readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const PHOTO_EXT = /\.(jpe?g|png|webp|avif)$/i;
-const photosDir = join(process.cwd(), "public", "kiosk-photos");
-const outFile = join(process.cwd(), "src", "lib", "kiosk-photos-manifest.ts");
+const scriptDir = dirname(fileURLToPath(import.meta.url));
+const projectRoot = join(scriptDir, "..");
+const photosDir = join(projectRoot, "public", "kiosk-photos");
+const outFile = join(projectRoot, "src", "lib", "kiosk-photos-manifest.ts");
 
 let entries = [];
 try {
