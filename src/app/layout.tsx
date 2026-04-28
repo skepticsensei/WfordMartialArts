@@ -3,6 +3,7 @@ import { Inter, Noto_Serif_JP } from "next/font/google";
 import Header from "@/components/wmac/Header";
 import Footer from "@/components/wmac/Footer";
 import StructuredData from "@/components/wmac/StructuredData";
+import ChromeGate from "@/components/wmac/ChromeGate";
 import { SITE } from "@/lib/wmac-constants";
 import "./globals.css";
 
@@ -91,10 +92,14 @@ export default function RootLayout({
       className={`${inter.variable} ${notoSerifJP.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <StructuredData />
-        <Header />
+        <ChromeGate>
+          <StructuredData />
+          <Header />
+        </ChromeGate>
         <main className="flex-1">{children}</main>
-        <Footer />
+        <ChromeGate>
+          <Footer />
+        </ChromeGate>
       </body>
     </html>
   );

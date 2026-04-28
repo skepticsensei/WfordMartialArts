@@ -1,0 +1,2 @@
+Drop dojo photos in this folder. Anything ending in .jpg, .jpeg, .png, .webp, or .avif is picked up automatically by the kiosk slideshow.
+Filename becomes alt text. Use clean names like "weapons-class-2026.jpg" (reads as "weapons class 2026").
