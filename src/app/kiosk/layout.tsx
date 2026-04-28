@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function KioskLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="kiosk-frame">
+    <>
       <KioskIdleReset />
       {children}
-    </div>
+    </>
   );
 }

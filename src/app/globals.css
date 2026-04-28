@@ -78,18 +78,3 @@ details[open]::details-content {
   height: auto;
   opacity: 1;
 }
-
-/* Kiosk preview frame: simulate 55" portrait screen on landscape browsers
-   (laptops/desktops) so we can scroll and feel the actual layout.
-   On the real kiosk (portrait orientation), the frame stays full-width. */
-@media (orientation: landscape) {
-  .kiosk-frame {
-    width: 1080px;
-    margin: 0 auto;
-    border-left: 1px dashed var(--wmac-gray);
-    border-right: 1px dashed var(--wmac-gray);
-    background: var(--wmac-rice);
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.04);
-    clip-path: inset(0 -100vmax);
-  }
-}
