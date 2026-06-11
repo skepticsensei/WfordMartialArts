@@ -10,29 +10,6 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-rice/95 backdrop-blur-sm border-b border-gray">
-      {/* Utility Strip */}
-      <div className="bg-ink text-rice text-sm">
-        <div className="max-w-6xl mx-auto px-4 py-1.5 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            {SITE.phone && (
-              <>
-                <a href={`tel:${SITE.phone}`} className="hover:text-red-light transition-colors">
-                  {SITE.phone}
-                </a>
-                <span className="hidden sm:inline text-gray">|</span>
-              </>
-            )}
-            <span className="hidden sm:inline">{SITE.address.city}, {SITE.address.region}</span>
-          </div>
-          <Link
-            href={`${SITE.basePath}/contact`}
-            className="bg-red hover:bg-red-dark text-white px-3 py-0.5 text-xs font-medium tracking-wide uppercase transition-colors"
-          >
-            Book Intro
-          </Link>
-        </div>
-      </div>
-
       {/* Main Nav */}
       <nav className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-1.5">
