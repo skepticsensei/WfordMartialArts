@@ -135,7 +135,7 @@ export default function Footer() {
               href="https://nathanhimes.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-red transition-colors"
+              className="font-semibold text-red hover:text-red-dark transition-colors"
             >
               Nathan Himes
             </a>
