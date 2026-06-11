@@ -127,8 +127,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-rice/10 text-center text-xs text-rice/40">
-          &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-rice/10 text-center text-xs text-rice/40 space-y-1">
+          <div>&copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.</div>
+          <div>
+            Designed and built by{" "}
+            <a
+              href="https://nathanhimes.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-red transition-colors"
+            >
+              Nathan Himes
+            </a>
+          </div>
         </div>
       </div>
     </footer>
