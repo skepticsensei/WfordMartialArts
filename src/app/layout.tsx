@@ -78,6 +78,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: "/logos/Weatherford_Martial_Arts_iphone_icon.png",
   },
 };
 
