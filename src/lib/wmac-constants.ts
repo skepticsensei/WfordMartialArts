@@ -32,6 +32,7 @@ export const NAV_LINKS = [
   { label: "Instructors", href: "/instructors" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "Student Portal", href: "https://students.wfordmartialarts.com", external: true },
 ];
 
 export const DISCIPLINES = [

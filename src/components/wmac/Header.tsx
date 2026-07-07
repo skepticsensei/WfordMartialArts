@@ -32,16 +32,27 @@ export default function Header() {
 
         {/* Desktop Links */}
         <ul className="hidden lg:flex items-center gap-6">
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-sm text-ink/70 hover:text-red transition-colors tracking-wide"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.external ? (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-sm text-ink/70 hover:text-red transition-colors tracking-wide"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ) : (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm text-ink/70 hover:text-red transition-colors tracking-wide"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            )
+          )}
         </ul>
 
         {/* Mobile Toggle */}
@@ -64,17 +75,29 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray bg-rice">
           <ul className="max-w-6xl mx-auto px-4 py-4 space-y-3">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-ink/70 hover:text-red transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.external ? (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block text-ink/70 hover:text-red transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ) : (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block text-ink/70 hover:text-red transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
       )}
