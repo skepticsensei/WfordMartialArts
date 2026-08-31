@@ -28,6 +28,10 @@ const RED = "#B21E2B";
 const RICE = "247, 243, 235";
 
 const LOGO_SRC = "/logos/Weatherford_Martial_Arts.png";
+/** Ink bounds of the seal inside the 1800px source, which carries ~17% padding. */
+const LOGO_INK = { x: 316, y: 317, w: 1178, h: 1185 };
+const SEAL = 344; // rendered size of the seal's ink
+const GAP = 66; // seal -> divider -> text
 
 function loadImage(src: string) {
   return new Promise<HTMLImageElement>((resolve, reject) => {
@@ -90,15 +94,15 @@ function draw(
     [1, "rgba(178, 30, 43, 0)"],
   ]);
 
-  // Decorative kanji out in the bleed: bu / do - "the martial way"
+  // Decorative kanji out in the bleed: bu / do, "the martial way"
   ctx.save();
   ctx.fillStyle = `rgba(${RICE}, 0.045)`;
   ctx.font = `700 470px ${serif}`;
   ctx.textBaseline = "middle";
   ctx.textAlign = "left";
-  ctx.fillText("武", 70, H / 2);
+  ctx.fillText("\u6B66", 70, H / 2);
   ctx.textAlign = "right";
-  ctx.fillText("道", W - 70, H / 2);
+  ctx.fillText("\u9053", W - 70, H / 2);
   ctx.restore();
 
   // Vignette so the bleed falls away from the center
@@ -109,55 +113,85 @@ function draw(
   ]);
 
   // ---- Safe area content ----
-  const logoSize = 400;
-  const logoX = SAFE_X;
-  const logoY = SAFE_Y + (SAFE_H - logoSize) / 2;
-  ctx.drawImage(logo, logoX, logoY, logoSize, logoSize);
+  const titleSize = 86;
+  const lines = [
+    { text: "Weatherford", font: `700 ${titleSize}px ${serif}`, spacing: "0px", dy: 0 },
+    { text: "Martial Arts Center", font: `700 ${titleSize}px ${serif}`, spacing: "0px", dy: 94 },
+    { text: SITE.tagline, font: `italic 400 34px ${serif}`, spacing: "0px", dy: 160 },
+    {
+      text: "AIKIDO · JUDO · AIKIJUJUTSU · WEATHERFORD, TEXAS",
+      font: `400 24px ${sans}`,
+      spacing: "3.36px",
+      dy: 212,
+    },
+    {
+      text: "WFORDMARTIALARTS.COM",
+      font: `500 24px ${sans}`,
+      spacing: "5.28px",
+      dy: 256,
+    },
+  ];
+
+  // Measure the text block so the whole lockup can be centered in the safe area
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+  let textW = 0;
+  for (const line of lines) {
+    ctx.letterSpacing = line.spacing;
+    ctx.font = line.font;
+    textW = Math.max(textW, ctx.measureText(line.text).width);
+  }
+  ctx.letterSpacing = "0px";
+
+  const contentW = SEAL + GAP + 1 + GAP + textW;
+  const startX = Math.round(SAFE_X + (SAFE_W - contentW) / 2);
+  const dividerX = Math.round(startX + SEAL + GAP);
+  const textX = dividerX + 1 + GAP;
+
+  ctx.drawImage(
+    logo,
+    LOGO_INK.x,
+    LOGO_INK.y,
+    LOGO_INK.w,
+    LOGO_INK.h,
+    startX,
+    Math.round(SAFE_Y + (SAFE_H - SEAL) / 2),
+    SEAL,
+    SEAL,
+  );
 
   // Hairline divider
-  const dividerX = Math.round(logoX + logoSize + 62);
   ctx.fillStyle = `rgba(${RICE}, 0.18)`;
   ctx.fillRect(dividerX, SAFE_Y + (SAFE_H - 300) / 2, 1, 300);
 
-  const textX = dividerX + 62;
-  ctx.textAlign = "left";
-  ctx.textBaseline = "alphabetic";
+  // Text block: cap top of line one to the baseline of the last line
+  const capTop = titleSize * 0.71;
+  const blockH = capTop + lines[lines.length - 1].dy;
+  const baseY = Math.round(SAFE_Y + (SAFE_H - blockH) / 2 + capTop);
 
-  // Headline
-  const titleSize = 86;
-  const titleLead = titleSize * 1.1;
-  let y = SAFE_Y + 110;
+  for (const line of lines) {
+    ctx.letterSpacing = line.spacing;
+    ctx.font = line.font;
+    const y = baseY + line.dy;
 
-  ctx.font = `700 ${titleSize}px ${serif}`;
-  ctx.fillStyle = "#FFFFFF";
-  ctx.fillText("Weatherford", textX, y);
+    if (line.text === "Martial Arts Center") {
+      ctx.fillStyle = RED;
+      ctx.fillText("Martial Arts", textX, y);
+      ctx.fillStyle = "#FFFFFF";
+      ctx.fillText(" Center", textX + ctx.measureText("Martial Arts").width, y);
+      continue;
+    }
 
-  y += titleLead;
-  ctx.fillStyle = RED;
-  ctx.fillText("Martial Arts", textX, y);
-  const redWidth = ctx.measureText("Martial Arts").width;
-  ctx.fillStyle = "#FFFFFF";
-  ctx.fillText(" Center", textX + redWidth, y);
-
-  // Tagline
-  y += 66;
-  ctx.font = `italic 400 34px ${serif}`;
-  ctx.fillStyle = `rgba(${RICE}, 0.62)`;
-  ctx.fillText(SITE.tagline, textX, y);
-
-  // Disciplines
-  y += 52;
-  ctx.letterSpacing = "0.14em";
-  ctx.font = `400 24px ${sans}`;
-  ctx.fillStyle = `rgba(${RICE}, 0.48)`;
-  ctx.fillText("AIKIDO · JUDO · AIKIJUJUTSU · WEATHERFORD, TEXAS", textX, y);
-
-  // Domain
-  y += 44;
-  ctx.letterSpacing = "0.22em";
-  ctx.font = `500 24px ${sans}`;
-  ctx.fillStyle = "#C9414D";
-  ctx.fillText("WFORDMARTIALARTS.COM", textX, y);
+    ctx.fillStyle =
+      line.dy === 0
+        ? "#FFFFFF"
+        : line.dy === 160
+          ? `rgba(${RICE}, 0.62)`
+          : line.dy === 212
+            ? `rgba(${RICE}, 0.48)`
+            : "#C9414D";
+    ctx.fillText(line.text, textX, y);
+  }
   ctx.letterSpacing = "0px";
 }
 
@@ -242,6 +276,13 @@ export default function BannerCanvas() {
             >
               Download PNG
             </button>
+            <a
+              href="/banners/youtube-banner.png"
+              download
+              className="border border-rice/30 hover:border-rice/60 text-rice px-5 py-2.5 text-sm font-medium tracking-wide uppercase transition-colors"
+            >
+              Saved copy
+            </a>
           </div>
         </div>
 
@@ -281,7 +322,9 @@ export default function BannerCanvas() {
         <p className="text-xs text-rice/40 mt-4 leading-relaxed">
           White box: 1546 &times; 423 safe area shown on phones and TV. Teal box:
           1855 &times; 423 tablet view. Desktop shows the full 2560 &times; 423 strip;
-          the top and bottom of the canvas only appear on TV.
+          the top and bottom of the canvas only appear on TV. &ldquo;Saved copy&rdquo; serves
+          the checked-in file at <code>/banners/youtube-banner.png</code>, regenerated with
+          <code>node scripts/generate-yt-banner.mjs</code>.
         </p>
       </div>
     </div>
