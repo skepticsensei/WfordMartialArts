@@ -195,6 +195,19 @@ function draw(
   ctx.letterSpacing = "0px";
 }
 
+const AVATARS = [
+  {
+    src: "/banners/youtube-avatar.png",
+    label: "Rice ground",
+    note: "Recommended. Holds contrast at 48px and stands off the ink banner behind it.",
+  },
+  {
+    src: "/banners/youtube-avatar-dark.png",
+    label: "Ink ground",
+    note: "Matches the banner ground; softer edge on YouTube's dark theme.",
+  },
+];
+
 export default function BannerCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [guides, setGuides] = useState(false);
@@ -324,8 +337,48 @@ export default function BannerCanvas() {
           1855 &times; 423 tablet view. Desktop shows the full 2560 &times; 423 strip;
           the top and bottom of the canvas only appear on TV. &ldquo;Saved copy&rdquo; serves
           the checked-in file at <code>/banners/youtube-banner.png</code>, regenerated with
-          <code>node scripts/generate-yt-banner.mjs</code>.
+          <code>node scripts/generate-youtube-art.mjs</code>.
         </p>
+
+        <hr className="border-rice/10 my-12" />
+
+        <h2 className="font-serif text-2xl font-bold text-white">Channel Profile Picture</h2>
+        <p className="text-sm text-rice/50 mt-1 mb-6">
+          800 &times; 800. YouTube crops it to a circle and shows it as small as 48px,
+          so the seal sits entirely inside the circle and carries the mark alone.
+        </p>
+
+        <div className="grid gap-8 sm:grid-cols-2 max-w-2xl">
+          {AVATARS.map((avatar) => (
+            <div key={avatar.src}>
+              <div className="flex items-end gap-5">
+                {[176, 72, 40].map((size) => (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img
+                    key={size}
+                    src={avatar.src}
+                    alt={`${avatar.label} profile picture at ${size}px`}
+                    width={size}
+                    height={size}
+                    className="rounded-full"
+                    style={{ width: size, height: size }}
+                  />
+                ))}
+              </div>
+              <div className="mt-4 flex items-baseline gap-3">
+                <span className="text-sm text-white">{avatar.label}</span>
+                <a
+                  href={avatar.src}
+                  download
+                  className="text-sm text-red hover:text-white transition-colors tracking-wide uppercase"
+                >
+                  Download
+                </a>
+              </div>
+              <p className="text-xs text-rice/40 mt-1">{avatar.note}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

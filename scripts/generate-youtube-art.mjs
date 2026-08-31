@@ -1,5 +1,8 @@
 /**
- * Renders the YouTube channel banner to public/banners/youtube-banner.png.
+ * Renders the dojo's YouTube channel art:
+ *   public/banners/youtube-banner.png  2560 x 1440 channel banner
+ *   public/banners/youtube-avatar.png   800 x  800 channel profile picture
+ *   public/banners/youtube-avatar-dark.png   the same mark on an ink ground
  *
  * Canvas:    2560 x 1440 - YouTube's upload size.
  * Safe area: 1546 x 423, centered - the only region guaranteed visible on
@@ -11,7 +14,7 @@
  *
  * Mirrors the on-page version at /ytbanner - keep the two in sync.
  *
- * Usage: node scripts/generate-yt-banner.mjs
+ * Usage: node scripts/generate-youtube-art.mjs
  *
  * Fonts download once into .cache/fonts (gitignored); this box has no system
  * fonts, and sharp comes in with Next's image optimizer.
@@ -23,6 +26,8 @@ import sharp from "sharp";
 const ROOT = process.cwd();
 const FONT_DIR = join(ROOT, ".cache", "fonts");
 const OUT = join(ROOT, "public", "banners", "youtube-banner.png");
+const OUT_AVATAR = join(ROOT, "public", "banners", "youtube-avatar.png");
+const OUT_AVATAR_DARK = join(ROOT, "public", "banners", "youtube-avatar-dark.png");
 const LOGO = join(ROOT, "public", "logos", "Weatherford_Martial_Arts.png");
 
 const FONTS = {
@@ -130,6 +135,59 @@ function textSvg() {
 </svg>`;
 }
 
+
+// ---- Profile picture ----
+// 800 x 800, cropped to a circle by YouTube and shown as small as 48px, so the
+// seal has to sit fully inside that circle and carry the whole mark on its own.
+// A hairline ring just inside the crop keeps the edge defined on YouTube's dark
+// UI, where an ink ground would otherwise bleed into the page.
+const AV = 800;
+const AV_SEAL = 520; // half-diagonal 368px, clear of the 400px crop radius
+const AV_RING = 386;
+
+function avatarSvg({ light }) {
+  const ground = light ? "#F7F3EB" : INK;
+  const weaveColor = light ? "23, 23, 23" : RICE;
+  const ringColor = light ? "23, 23, 23" : RICE;
+  const ringAlpha = light ? 0.14 : 0.16;
+  const glowAlpha = light ? 0.1 : 0.34;
+
+  const lines = [];
+  for (let x = -AV; x < AV * 2; x += 24) {
+    lines.push(`<line x1="${x}" y1="${AV}" x2="${x + AV}" y2="0"/>`);
+  }
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${AV}" height="${AV}" viewBox="0 0 ${AV} ${AV}">
+  <defs>
+    <radialGradient id="glow" gradientUnits="userSpaceOnUse" cx="${AV / 2}" cy="${AV / 2}" r="430">
+      <stop offset="0" stop-color="${RED}" stop-opacity="${glowAlpha}"/>
+      <stop offset="0.6" stop-color="${RED}" stop-opacity="${glowAlpha * 0.35}"/>
+      <stop offset="1" stop-color="${RED}" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="${AV}" height="${AV}" fill="${ground}"/>
+  <g stroke="rgba(${weaveColor}, 0.04)" stroke-width="1.5">${lines.join("")}</g>
+  <rect width="${AV}" height="${AV}" fill="url(#glow)"/>
+  <circle cx="${AV / 2}" cy="${AV / 2}" r="${AV_RING}" fill="none"
+    stroke="rgba(${ringColor}, ${ringAlpha})" stroke-width="3"/>
+</svg>`;
+}
+
+async function renderAvatar(out, { light = false } = {}) {
+  const seal = await sharp(LOGO)
+    .trim({ threshold: 1 })
+    .resize(AV_SEAL, AV_SEAL, { fit: "contain", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .png()
+    .toBuffer();
+
+  await sharp(Buffer.from(avatarSvg({ light })))
+    .composite([{ input: seal, left: (AV - AV_SEAL) / 2, top: (AV - AV_SEAL) / 2 }])
+    .png({ compressionLevel: 9 })
+    .toFile(out);
+
+  console.log(`wrote ${out} (${AV}x${AV})`);
+}
+
 async function main() {
   await ensureFonts();
   await mkdir(join(ROOT, "public", "banners"), { recursive: true });
@@ -172,6 +230,9 @@ async function main() {
   console.log(
     `wrote ${OUT} (${meta.width}x${meta.height}); text block ${textMeta.width}x${textMeta.height}, content ${contentW}px in a ${SAFE_W}px safe area`,
   );
+
+  await renderAvatar(OUT_AVATAR, { light: true });
+  await renderAvatar(OUT_AVATAR_DARK);
 }
 
 main().catch((err) => {
