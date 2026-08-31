@@ -130,7 +130,7 @@ function textSvg() {
   <text x="${pad}" y="110" font-family="${SERIF}" font-weight="700" font-size="${titleSize}" fill="#FFFFFF">Weatherford</text>
   <text x="${pad}" y="204" font-family="${SERIF}" font-weight="700" font-size="${titleSize}" fill="#FFFFFF"><tspan fill="${RED}">Martial Arts</tspan> Center</text>
   <text x="${pad}" y="270" font-family="${SERIF}" font-style="italic" font-size="34" fill="rgba(${RICE}, 0.62)">${TAGLINE}</text>
-  <text x="${pad}" y="322" font-family="${SANS}" font-size="24" letter-spacing="3.36" fill="rgba(${RICE}, 0.48)">AIKIDO &#xB7; JUDO &#xB7; AIKIJUJUTSU &#xB7; WEATHERFORD, TEXAS</text>
+  <text x="${pad}" y="322" font-family="${SANS}" font-size="24" letter-spacing="3.36" fill="rgba(${RICE}, 0.48)">AIKIDO &#xB7; JUDO &#xB7; AIKIJUJUTSU &#xB7; KARATE &#xB7; WEATHERFORD, TEXAS</text>
   <text x="${pad}" y="366" font-family="${SANS}" font-weight="500" font-size="24" letter-spacing="5.28" fill="#C9414D">WFORDMARTIALARTS.COM</text>
 </svg>`;
 }

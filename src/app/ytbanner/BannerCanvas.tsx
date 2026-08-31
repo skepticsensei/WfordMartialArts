@@ -119,7 +119,7 @@ function draw(
     { text: "Martial Arts Center", font: `700 ${titleSize}px ${serif}`, spacing: "0px", dy: 94 },
     { text: SITE.tagline, font: `italic 400 34px ${serif}`, spacing: "0px", dy: 160 },
     {
-      text: "AIKIDO · JUDO · AIKIJUJUTSU · WEATHERFORD, TEXAS",
+      text: "AIKIDO · JUDO · AIKIJUJUTSU · KARATE · WEATHERFORD, TEXAS",
       font: `400 24px ${sans}`,
       spacing: "3.36px",
       dy: 212,
