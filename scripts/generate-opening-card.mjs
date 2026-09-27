@@ -106,12 +106,6 @@ function backgroundSvg() {
   ${weave()}
   <rect width="${W}" height="${H}" fill="url(#glow)"/>
 
-  <!-- Decorative kanji out at the edges: bu / do, "the martial way" -->
-  <g font-family="${SERIF}" font-weight="700" font-size="560" fill="rgba(${RICE}, 0.05)" dominant-baseline="central">
-    <text x="-40" y="${H / 2}" text-anchor="start">&#x6B66;</text>
-    <text x="${W + 40}" y="${H / 2}" text-anchor="end">&#x9053;</text>
-  </g>
-
   <rect width="${W}" height="${H}" fill="url(#vignette)"/>
 </svg>`;
 }
