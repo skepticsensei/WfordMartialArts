@@ -25,7 +25,7 @@
 import { mkdir } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { ensureFonts, SERIF, SANS } from "./lib/brand-fonts.mjs";
-import { RED, RICE, createCanvas, esc, parseArgs, slug } from "./lib/card-ground.mjs";
+import { RED, RICE, createCanvas, dojoNameSvg, esc, parseArgs, slug } from "./lib/card-ground.mjs";
 
 const ROOT = process.cwd();
 const DEFAULT_OUT = join(ROOT, "public", "banners", "youtube-opening-card.png");
@@ -35,33 +35,7 @@ const SEAL_PLAIN = 262; // rendered size of the seal's ink, not its padded box
 const SEAL_TITLED = 214;
 const GAP_SEAL = 50; // seal -> name block
 const GAP_TITLE = 46; // name block -> per-video title block
-const DISCIPLINES = "AIKIDO · JUDO · AIKIJUJUTSU · KARATE";
-const TAGLINE = "Traditional Arts. Timeless Discipline.";
 const URL_TEXT = "WFORDMARTIALARTS.COM";
-
-/**
- * With a per-video title under it, the name block goes compact: the title is
- * the line that wants reading, and the tagline underneath it only crowds the
- * stack against the zoom-safe edge.
- */
-function nameSvg({ compact }) {
-  const pad = 60;
-  const mid = 800 + pad;
-  const tagline = compact
-    ? ""
-    : `<text x="${mid}" y="256" font-family="${SERIF}" font-style="italic" font-size="36" fill="rgba(${RICE}, 0.66)">${TAGLINE}</text>`;
-  const ruleY = compact ? 244 : 298;
-  const discY = compact ? 302 : 356;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${1600 + pad * 2}" height="420" viewBox="0 0 ${1600 + pad * 2} 420">
-  <g text-anchor="middle">
-    <text x="${mid}" y="96" font-family="${SERIF}" font-weight="700" font-size="88" fill="#FFFFFF">Weatherford</text>
-    <text x="${mid}" y="196" font-family="${SERIF}" font-weight="700" font-size="88" fill="#FFFFFF"><tspan fill="${RED}">Martial Arts</tspan> Center</text>
-    ${tagline}
-    <rect x="${mid - 120}" y="${ruleY}" width="240" height="1" fill="rgba(${RICE}, 0.22)"/>
-    <text x="${mid}" y="${discY}" font-family="${SANS}" font-size="23" letter-spacing="6.4" fill="rgba(${RICE}, 0.52)">${DISCIPLINES}</text>
-  </g>
-</svg>`;
-}
 
 /** Per-video title, sat under a short red rule. Omitted when no title is given. */
 function titleSvg(title, subtitle) {
@@ -112,7 +86,7 @@ async function main() {
   // the stack would otherwise reach past the zoom-safe band.
   const sealSize = title ? SEAL_TITLED : SEAL_PLAIN;
   const measure = async (k) => {
-    const name = await block(nameSvg({ compact: Boolean(title) }), k);
+    const name = await block(dojoNameSvg({ compact: Boolean(title) }), k);
     const titleBlock = title ? await block(titleSvg(title, subtitle), k) : null;
     const seal = px(sealSize * k);
     const h = seal + px(GAP_SEAL * k) + name.h + (titleBlock ? px(GAP_TITLE * k) + titleBlock.h : 0);

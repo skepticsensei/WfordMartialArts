@@ -16,6 +16,7 @@
  */
 import { join } from "node:path";
 import sharp from "sharp";
+import { SERIF, SANS } from "./brand-fonts.mjs";
 
 export const GRID_W = 1920;
 export const GRID_H = 1080;
@@ -26,6 +27,8 @@ export const RED = "#B21E2B";
 export const RICE = "247, 243, 235";
 
 const PAD = 40; // breathing room inside the zoom-safe area
+const DISCIPLINES = "AIKIDO · JUDO · AIKIJUJUTSU · KARATE";
+const TAGLINE = "Traditional Arts. Timeless Discipline.";
 
 export const logoPath = (root) =>
   join(root, "public", "logos", "Weatherford_Martial_Arts.png");
@@ -158,4 +161,32 @@ export function createCanvas(scale) {
   };
 
   return { SCALE, W, H, px, safe, block, seal, render };
+}
+
+/**
+ * The dojo lockup: the name, a hairline rule and the disciplines. Compact
+ * drops the tagline, for a card that has its own line to say underneath -
+ * an opening card with a video title. Minimal drops the disciplines too,
+ * for the ending card, whose job is the ask rather than the curriculum.
+ */
+export function dojoNameSvg({ compact, minimal }) {
+  const pad = 60;
+  const mid = 800 + pad;
+  const tagline = compact || minimal
+    ? ""
+    : `<text x="${mid}" y="256" font-family="${SERIF}" font-style="italic" font-size="36" fill="rgba(${RICE}, 0.66)">${TAGLINE}</text>`;
+  const ruleY = compact || minimal ? 244 : 298;
+  const discY = compact ? 302 : 356;
+  const disciplines = minimal
+    ? ""
+    : `<text x="${mid}" y="${discY}" font-family="${SANS}" font-size="23" letter-spacing="6.4" fill="rgba(${RICE}, 0.52)">${DISCIPLINES}</text>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${1600 + pad * 2}" height="420" viewBox="0 0 ${1600 + pad * 2} 420">
+  <g text-anchor="middle">
+    <text x="${mid}" y="96" font-family="${SERIF}" font-weight="700" font-size="88" fill="#FFFFFF">Weatherford</text>
+    <text x="${mid}" y="196" font-family="${SERIF}" font-weight="700" font-size="88" fill="#FFFFFF"><tspan fill="${RED}">Martial Arts</tspan> Center</text>
+    ${tagline}
+    <rect x="${mid - 120}" y="${ruleY}" width="240" height="1" fill="rgba(${RICE}, 0.22)"/>
+    ${disciplines}
+  </g>
+</svg>`;
 }
