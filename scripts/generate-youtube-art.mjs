@@ -16,25 +16,18 @@
  *
  * Usage: node scripts/generate-youtube-art.mjs
  *
- * Fonts download once into .cache/fonts (gitignored); this box has no system
- * fonts, and sharp comes in with Next's image optimizer.
+ * Fonts download once into .cache/fonts (gitignored); see scripts/lib/brand-fonts.mjs.
  */
-import { mkdir, writeFile, access } from "node:fs/promises";
+import { mkdir } from "node:fs/promises";
 import { join } from "node:path";
 import sharp from "sharp";
+import { ensureFonts, SERIF, SANS } from "./lib/brand-fonts.mjs";
 
 const ROOT = process.cwd();
-const FONT_DIR = join(ROOT, ".cache", "fonts");
 const OUT = join(ROOT, "public", "banners", "youtube-banner.png");
 const OUT_AVATAR = join(ROOT, "public", "banners", "youtube-avatar.png");
 const OUT_AVATAR_DARK = join(ROOT, "public", "banners", "youtube-avatar-dark.png");
 const LOGO = join(ROOT, "public", "logos", "Weatherford_Martial_Arts.png");
-
-const FONTS = {
-  "Inter[opsz,wght].ttf": "ofl/inter/Inter%5Bopsz,wght%5D.ttf",
-  "Inter-Italic[opsz,wght].ttf": "ofl/inter/Inter-Italic%5Bopsz,wght%5D.ttf",
-  "NotoSerifJP[wght].ttf": "ofl/notoserifjp/NotoSerifJP%5Bwght%5D.ttf",
-};
 
 const W = 2560;
 const H = 1440;
@@ -46,40 +39,10 @@ const SAFE_Y = (H - SAFE_H) / 2;
 const INK = "#171717";
 const RED = "#B21E2B";
 const RICE = "247, 243, 235";
-const SERIF = "Noto Serif JP";
-const SANS = "Inter";
 
 const SEAL = 344; // rendered size of the seal's ink, not its padded box
 const GAP = 66; // seal -> divider -> text
 const TAGLINE = "Traditional Arts. Timeless Discipline.";
-
-async function ensureFonts() {
-  await mkdir(FONT_DIR, { recursive: true });
-  for (const [name, path] of Object.entries(FONTS)) {
-    const dest = join(FONT_DIR, name);
-    try {
-      await access(dest);
-      continue;
-    } catch {}
-    const url = `https://raw.githubusercontent.com/google/fonts/main/${path}`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Could not download ${name}: ${res.status}`);
-    await writeFile(dest, Buffer.from(await res.arrayBuffer()));
-    console.log(`downloaded ${name}`);
-  }
-  const conf = join(ROOT, ".cache", "fonts.conf");
-  await writeFile(
-    conf,
-    `<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <dir>${FONT_DIR}</dir>
-  <cachedir>${join(ROOT, ".cache", "fontconfig")}</cachedir>
-</fontconfig>
-`,
-  );
-  process.env.FONTCONFIG_FILE = conf;
-}
 
 /** Diagonal weave, same texture as the site hero. */
 function weave() {
@@ -189,7 +152,7 @@ async function renderAvatar(out, { light = false } = {}) {
 }
 
 async function main() {
-  await ensureFonts();
+  await ensureFonts(ROOT);
   await mkdir(join(ROOT, "public", "banners"), { recursive: true });
 
   // Seal, trimmed to its ink then scaled - the source PNG carries ~17% padding.
