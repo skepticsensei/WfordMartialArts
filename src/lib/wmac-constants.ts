@@ -125,7 +125,7 @@ export const HOSTED_GROUPS: {
     slug: "just-move",
     leader: "Autumn Nelson",
     logo: "/logos/Just_Move_Fitness.svg",
-    externalUrl: "https://autumnjustmovefitn.wixsite.com/just-move-fitness-wi",
+    externalUrl: "https://justmovewithautumn.com",
     shortDescription:
       "Offering small group Mat Pilates and Personal Training.",
     description:
