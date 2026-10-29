@@ -185,9 +185,6 @@ export const PEACEFUL_STORM = {
 };
 
 export const SCHEDULE = [
-  { day: "Monday", classes: [
-    { time: "5:30 - 6:00 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
-  ]},
   { day: "Tuesday", classes: [
     { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
     { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
@@ -197,9 +194,6 @@ export const SCHEDULE = [
     { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
     { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
-  ]},
-  { day: "Saturday", classes: [
-    { time: "10:00 AM", name: "Kata Class - The Karate University", group: "karate-university" },
   ]},
 ];
 
@@ -207,9 +201,6 @@ export const SCHEDULE = [
 // (open mats, special events, internal-only sessions) without affecting the public homepage.
 // Seeded from SCHEDULE; edit freely from here.
 export const KIOSK_SCHEDULE: typeof SCHEDULE = [
-  { day: "Monday", classes: [
-    { time: "5:30 - 6:00 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
-  ]},
   { day: "Tuesday", classes: [
     { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
     { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
@@ -219,9 +210,6 @@ export const KIOSK_SCHEDULE: typeof SCHEDULE = [
     { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
     { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
-  ]},
-  { day: "Saturday", classes: [
-    { time: "10:00 AM", name: "Kata Class - The Karate University", group: "karate-university" },
   ]},
 ];
 
