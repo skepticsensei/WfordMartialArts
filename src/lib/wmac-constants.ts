@@ -217,6 +217,7 @@ export const INSTRUCTORS: {
   title: string;
   arts: string[];
   bio: string;
+  ranks?: { rank: string; art: string; org: string }[];
   media?: { label: string; url: string }[];
 }[] = [
   {
@@ -225,6 +226,11 @@ export const INSTRUCTORS: {
     arts: ["Aikido", "Judo", "Daito Ryu Aikijujutsu"],
     bio:
       "Nathan has been teaching martial arts in Weatherford for over 17 years and is the founder of Weatherford Martial Arts Center. He began his Aikido practice as a young man and has continued deep study in the traditional Japanese arts ever since. He currently holds the rank of Rokudan (6th dan) in Tomiki Aikido and Shodan in Kodokan Judo, both from Kaze Uta Budokai, and Shodan in Daito Ryu Aikijujutsu Kiyamakai. Beyond the dojo, he has served as a Defensive Tactics and Mechanics of Arrest instructor for the Weatherford College Police Academy, training cadets in control techniques and officer safety. He is also a certified meditation instructor and integrates mindfulness into his teaching to help students develop focus, emotional regulation, and resilience on and off the mat. His ongoing study focuses on the internal principles of aiki, the subtle body mechanics that unify movement across all three arts, the preservation of classical Tomiki kata, and the philosophy of shugyō, a lifelong journey of training.",
+    ranks: [
+      { rank: "Rokudan (6th Dan)", art: "Tomiki Aikido", org: "Kaze Uta Budokai" },
+      { rank: "Shodan (1st Dan)", art: "Kodokan Judo", org: "Kaze Uta Budokai" },
+      { rank: "Shodan (1st Dan)", art: "Daito Ryu Aikijujutsu", org: "Kiyamakai" },
+    ],
     media: [
       {
         label: "Developing Stronger Connection - 2024 Aiki Workshop (YouTube)",

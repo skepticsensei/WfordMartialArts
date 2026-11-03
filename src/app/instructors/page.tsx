@@ -51,6 +51,21 @@ export default function InstructorsPage() {
                 ))}
               </div>
               <p className="text-sm text-ink/70 leading-relaxed">{inst.bio}</p>
+              {inst.ranks && inst.ranks.length > 0 && (
+                <div className="mt-6 pt-6 border-t border-gray">
+                  <h3 className="text-[10px] tracking-widest uppercase text-ink/50 mb-3">
+                    Rank
+                  </h3>
+                  <ul className="space-y-2">
+                    {inst.ranks.map((r) => (
+                      <li key={r.art} className="text-sm text-ink/70">
+                        <span className="font-medium text-ink">{r.rank}</span>, {r.art}
+                        <span className="text-ink/50"> - {r.org}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {inst.media && inst.media.length > 0 && (
                 <div className="mt-6 pt-6 border-t border-gray">
                   <h3 className="text-[10px] tracking-widest uppercase text-ink/50 mb-3">
