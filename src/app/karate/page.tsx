@@ -1,17 +1,16 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { SITE, HOSTED_GROUPS } from "@/lib/wmac-constants";
 
 export const metadata: Metadata = {
-  title: "The Karate University - Karate Classes in Weatherford, TX",
+  title: "American Karate - Karate Classes in Weatherford, TX",
   description:
-    "Structured karate instruction with clear belt progression for kids, teens, and adults. The Karate University program hosted at Weatherford Martial Arts Center.",
-  alternates: { canonical: "/karate-university" },
+    "Structured karate instruction with clear belt progression for kids, teens, and adults. The American Karate program hosted at Weatherford Martial Arts Center.",
+  alternates: { canonical: "/karate" },
 };
 
-export default function KarateUniversityPage() {
-  const group = HOSTED_GROUPS[0];
+export default function KaratePage() {
+  const group = HOSTED_GROUPS.find((g) => g.slug === "karate")!;
 
   return (
     <>
@@ -22,13 +21,6 @@ export default function KarateUniversityPage() {
               Hosted at WMAC
             </span>
           </div>
-          <Image
-            src={group.logo}
-            alt={group.name}
-            width={200}
-            height={100}
-            className="mx-auto mb-6 h-20 w-auto invert"
-          />
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
             {group.name}
           </h1>

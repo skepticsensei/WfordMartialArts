@@ -8,7 +8,7 @@
 - **URL:** skill-blend.com/wfordmartialarts
 - **Location:** Weatherford, Texas
 - **Core Arts:** Aikido, Judo, Daito Ryu Aikijujutsu
-- **Hosted Groups:** The Karate University, Just Move Health (Autumn Nelson)
+- **Hosted Groups:** American Karate, Just Move Health (Autumn Nelson)
 
 ## Design: Dojo Ledger
 - **BG:** Rice Paper #F7F3EB | **Text:** Ink #171717 | **Accent:** Hanko Red #B21E2B
@@ -53,7 +53,7 @@
 - `aikido/page.tsx` — Aikido detail (description, who it's for, outcomes)
 - `judo/page.tsx` — Judo detail
 - `daito-ryu/page.tsx` — Daito Ryu Aikijujutsu detail
-- `karate-university/page.tsx` — Karate University (hosted, red accent)
+- `karate/page.tsx` - American Karate (hosted, red accent)
 - `just-move/page.tsx` — Just Move Health (hosted, teal accent, lists class types)
 - `schedule/page.tsx` — Full schedule with color legend
 - `start-here/page.tsx` — 3-step onboarding + first class checklist (7 items)
@@ -66,7 +66,6 @@
 
 ### Assets
 - `public/logos/Weatherford_Martial_Arts.png` (1800x1800)
-- `public/logos/The_Karate_University.png` (1188x545)
 - `public/logos/Just_Move_Fitness.svg` (500x500, teal #00c2cb)
 
 ## Current Task: Awaiting user review & feedback

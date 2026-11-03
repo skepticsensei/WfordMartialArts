@@ -95,7 +95,7 @@ export const DISCIPLINES = [
 export const HOSTED_GROUPS: {
   name: string;
   slug: string;
-  logo: string;
+  logo?: string;
   shortDescription: string;
   description: string;
   highlights: string[];
@@ -104,13 +104,12 @@ export const HOSTED_GROUPS: {
   externalUrl?: string;
 }[] = [
   {
-    name: "The Karate University",
-    slug: "karate-university",
-    logo: "/logos/The_Karate_University.png",
+    name: "American Karate",
+    slug: "karate",
     shortDescription:
       "A structured karate program offering belt-rank progression for students of all ages. Building confidence, discipline, and self-defense skills.",
     description:
-      "The Karate University provides a comprehensive karate curriculum with clear belt progression pathways. Classes are structured to develop strong fundamentals in striking, kata, and self-defense while building character, confidence, and discipline. Programs available for children, teens, and adults.",
+      "American Karate provides a comprehensive karate curriculum with clear belt progression pathways. Classes are structured to develop strong fundamentals in striking, kata, and self-defense while building character, confidence, and discipline. Programs available for children, teens, and adults.",
     highlights: [
       "Structured belt-rank progression system",
       "Classes for children, teens, and adults",
@@ -186,13 +185,13 @@ export const PEACEFUL_STORM = {
 
 export const SCHEDULE = [
   { day: "Tuesday", classes: [
-    { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
-    { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate - American Karate", group: "karate" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class - American Karate", group: "karate" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
   { day: "Thursday", classes: [
-    { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
-    { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate - American Karate", group: "karate" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class - American Karate", group: "karate" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
 ];
@@ -202,13 +201,13 @@ export const SCHEDULE = [
 // Seeded from SCHEDULE; edit freely from here.
 export const KIOSK_SCHEDULE: typeof SCHEDULE = [
   { day: "Tuesday", classes: [
-    { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
-    { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate - American Karate", group: "karate" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class - American Karate", group: "karate" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
   { day: "Thursday", classes: [
-    { time: "5:30 - 6:15 PM", name: "Beginner Karate - The Karate University", group: "karate-university" },
-    { time: "6:20 - 7:00 PM", name: "Kata Class - The Karate University", group: "karate-university" },
+    { time: "5:30 - 6:15 PM", name: "Beginner Karate - American Karate", group: "karate" },
+    { time: "6:20 - 7:00 PM", name: "Kata Class - American Karate", group: "karate" },
     { time: "7:00 - 8:30 PM", name: "Aikido/Judo/Aikijujutsu", group: "aikido" },
   ]},
 ];
@@ -254,7 +253,7 @@ export const FAQS = [
   },
   {
     q: "Can my child train here?",
-    a: "Yes! The Karate University offers structured programs for children. Our martial arts classes also welcome teens. Contact us to discuss the best program for your child's age and interests.",
+    a: "Yes! American Karate offers structured programs for children. Our martial arts classes also welcome teens. Contact us to discuss the best program for your child's age and interests.",
   },
   {
     q: "Is there a free trial class?",

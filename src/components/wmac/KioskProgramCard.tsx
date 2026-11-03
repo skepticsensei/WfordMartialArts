@@ -7,7 +7,7 @@ type Accent = "red" | "teal" | "purple" | "ink";
 
 interface KioskProgramCardProps {
   name: string;
-  logo: string;
+  logo?: string;
   shortDescription: string;
   description: string;
   highlights: string[];
@@ -112,13 +112,15 @@ export default function KioskProgramCard({
         className={`group flex flex-col h-full w-full text-left bg-white border ${a.border} p-6 md:p-8 transition-all hover:shadow-lg active:shadow-md`}
       >
         <div className="flex items-center gap-4 mb-4">
-          <Image
-            src={logo}
-            alt={name}
-            width={80}
-            height={80}
-            className="w-16 h-16 md:w-20 md:h-20 object-contain"
-          />
+          {logo && (
+            <Image
+              src={logo}
+              alt={name}
+              width={80}
+              height={80}
+              className="w-16 h-16 md:w-20 md:h-20 object-contain"
+            />
+          )}
           <div>
             <h3 className="font-serif text-lg font-bold text-ink">{name}</h3>
             {leader && <div className="text-sm text-ink/50">with {leader}</div>}
@@ -147,13 +149,15 @@ export default function KioskProgramCard({
             className={`relative bg-rice border border-gray w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 md:p-10 transition-all duration-[600ms] ease-out ${closing ? "opacity-0 scale-95" : "opacity-100 scale-100 starting:opacity-0 starting:scale-95"}`}
           >
             <div className="flex items-start gap-4 mb-6">
-              <Image
-                src={logo}
-                alt={name}
-                width={120}
-                height={120}
-                className="w-20 h-20 md:w-28 md:h-28 object-contain shrink-0"
-              />
+              {logo && (
+                <Image
+                  src={logo}
+                  alt={name}
+                  width={120}
+                  height={120}
+                  className="w-20 h-20 md:w-28 md:h-28 object-contain shrink-0"
+                />
+              )}
               <div className="flex-1 min-w-0">
                 <h3 className="font-serif text-2xl md:text-3xl font-bold text-ink leading-tight">
                   {name}

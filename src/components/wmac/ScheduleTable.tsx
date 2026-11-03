@@ -4,7 +4,7 @@ const groupColors: Record<string, string> = {
   aikido: "bg-red-light text-red border-red/20",
   judo: "bg-red-light text-red border-red/20",
   "daito-ryu": "bg-red-light text-red border-red/20",
-  "karate-university": "bg-green-light text-green border-green/30",
+  karate: "bg-green-light text-green border-green/30",
   "just-move": "bg-teal/10 text-teal border-teal/20",
   open: "bg-gray-light text-ink/60 border-gray",
 };

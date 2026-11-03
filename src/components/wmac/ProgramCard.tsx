@@ -5,7 +5,7 @@ import { SITE } from "@/lib/wmac-constants";
 interface ProgramCardProps {
   name: string;
   slug: string;
-  logo: string;
+  logo?: string;
   shortDescription: string;
   accent: "red" | "teal" | "purple";
   leader?: string;
@@ -46,13 +46,15 @@ export default function ProgramCard({
   const content = (
     <>
       <div className="flex items-center gap-4 mb-4">
-        <Image
-          src={logo}
-          alt={name}
-          width={80}
-          height={80}
-          className="w-16 h-16 md:w-20 md:h-20 object-contain"
-        />
+        {logo && (
+          <Image
+            src={logo}
+            alt={name}
+            width={80}
+            height={80}
+            className="w-16 h-16 md:w-20 md:h-20 object-contain"
+          />
+        )}
         <div>
           <span className={`inline-block text-[10px] tracking-widest uppercase font-medium px-2 py-0.5 mb-1 ${tagColor}`}>
             Hosted at WMAC
