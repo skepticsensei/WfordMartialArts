@@ -23,7 +23,7 @@ export default function InstructorsPage() {
             className="mx-auto mb-2 md:mb-3 w-48 h-48 md:w-60 md:h-60"
           />
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white">
-            Instructors
+            Martial Arts Instructors
           </h1>
         </div>
       </section>
