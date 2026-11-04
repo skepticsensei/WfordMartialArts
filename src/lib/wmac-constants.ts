@@ -217,7 +217,7 @@ export const INSTRUCTORS: {
   title: string;
   arts: string[];
   bio: string;
-  ranks?: { rank: string; art: string; org: string }[];
+  ranks?: { rank: string; art?: string; org?: string }[];
   media?: { label: string; url: string }[];
 }[] = [
   {
@@ -230,6 +230,7 @@ export const INSTRUCTORS: {
       { rank: "Rokudan (6th Dan)", art: "Tomiki Aikido", org: "Kaze Uta Budokai" },
       { rank: "Shodan (1st Dan)", art: "Kodokan Judo", org: "Kaze Uta Budokai" },
       { rank: "Shodan (1st Dan)", art: "Daito Ryu Aikijujutsu", org: "Kiyamakai" },
+      { rank: "Certified Meditation Instructor" },
     ],
     media: [
       {
