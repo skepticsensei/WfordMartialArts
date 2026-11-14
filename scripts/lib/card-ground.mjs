@@ -61,11 +61,17 @@ export function parseArgs(argv, defaults) {
   return args;
 }
 
+/**
+ * Vertical cards (YouTube Shorts) use a 1080 x 1920 grid. The glow and the
+ * vignette are re-proportioned for the tall frame rather than stretched.
+ */
+export const VERTICAL = { w: 1080, h: 1920 };
+
 /** Diagonal weave, same texture as the site hero and the channel banner. */
-function weave() {
+function weave(gw = GRID_W, gh = GRID_H) {
   const lines = [];
-  for (let x = -GRID_H; x < GRID_W + GRID_H; x += 32) {
-    lines.push(`<line x1="${x}" y1="${GRID_H}" x2="${x + GRID_H}" y2="0"/>`);
+  for (let x = -gh; x < gw + gh; x += 32) {
+    lines.push(`<line x1="${x}" y1="${gh}" x2="${x + gh}" y2="0"/>`);
   }
   return `<g stroke="rgba(${RICE}, 0.035)" stroke-width="2">${lines.join("")}</g>`;
 }
@@ -76,29 +82,34 @@ function weave() {
  * stretched well past the frame: a push-in crops into them, and a gradient
  * that ended at the edge would show its rim as soon as it did.
  */
-export function backgroundSvg(outW, outH) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${outW}" height="${outH}" viewBox="0 0 ${GRID_W} ${GRID_H}">
+export function backgroundSvg(outW, outH, vertical = false) {
+  const gw = vertical ? VERTICAL.w : GRID_W;
+  const gh = vertical ? VERTICAL.h : GRID_H;
+  // Glow and vignette ellipses (radius x, radius y), tuned per orientation.
+  const glow = vertical ? { cy: gh * 0.44, rx: 900, ry: 1080 } : { cy: gh * 0.46, rx: 1060, ry: 730 };
+  const vig = vertical ? { rx: 1000, ry: 1500 } : { rx: 1390, ry: 890 };
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${outW}" height="${outH}" viewBox="0 0 ${gw} ${gh}">
   <defs>
     <radialGradient id="glow" gradientUnits="userSpaceOnUse"
-      cx="${GRID_W / 2}" cy="${GRID_H * 0.46}" r="1060"
-      gradientTransform="translate(0, ${GRID_H * 0.46 * (1 - 730 / 1060)}) scale(1, ${730 / 1060})">
+      cx="${gw / 2}" cy="${glow.cy}" r="${glow.rx}"
+      gradientTransform="translate(0, ${glow.cy * (1 - glow.ry / glow.rx)}) scale(1, ${glow.ry / glow.rx})">
       <stop offset="0" stop-color="${RED}" stop-opacity="0.34"/>
       <stop offset="0.55" stop-color="${RED}" stop-opacity="0.11"/>
       <stop offset="1" stop-color="${RED}" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="vignette" gradientUnits="userSpaceOnUse"
-      cx="${GRID_W / 2}" cy="${GRID_H / 2}" r="1390"
-      gradientTransform="translate(0, ${(GRID_H / 2) * (1 - 890 / 1390)}) scale(1, ${890 / 1390})">
+      cx="${gw / 2}" cy="${gh / 2}" r="${vig.rx}"
+      gradientTransform="translate(0, ${(gh / 2) * (1 - vig.ry / vig.rx)}) scale(1, ${vig.ry / vig.rx})">
       <stop offset="0.40" stop-color="#000000" stop-opacity="0"/>
       <stop offset="1" stop-color="#000000" stop-opacity="0.62"/>
     </radialGradient>
   </defs>
 
-  <rect width="${GRID_W}" height="${GRID_H}" fill="${INK}"/>
-  ${weave()}
-  <rect width="${GRID_W}" height="${GRID_H}" fill="url(#glow)"/>
+  <rect width="${gw}" height="${gh}" fill="${INK}"/>
+  ${weave(gw, gh)}
+  <rect width="${gw}" height="${gh}" fill="url(#glow)"/>
 
-  <rect width="${GRID_W}" height="${GRID_H}" fill="url(#vignette)"/>
+  <rect width="${gw}" height="${gh}" fill="url(#vignette)"/>
 </svg>`;
 }
 
@@ -107,10 +118,12 @@ export function backgroundSvg(outW, outH) {
  * and the two things every card paints - a trimmed block of type, and the
  * seal.
  */
-export function createCanvas(scale) {
+export function createCanvas(scale, { vertical = false } = {}) {
   const SCALE = Number(scale) > 0 ? Number(scale) : DEFAULT_SCALE;
-  const W = Math.round(GRID_W * SCALE);
-  const H = Math.round(GRID_H * SCALE);
+  const gw = vertical ? VERTICAL.w : GRID_W;
+  const gh = vertical ? VERTICAL.h : GRID_H;
+  const W = Math.round(gw * SCALE);
+  const H = Math.round(gh * SCALE);
 
   // Grid units -> output pixels. Blocks are rasterized straight at their final
   // size, never resized afterwards, so the type stays crisp.
@@ -118,10 +131,13 @@ export function createCanvas(scale) {
 
   const inset = (1 - 1 / SCALE) / 2;
   const safe = {
-    x: px(GRID_W * inset) + px(PAD),
-    top: px(GRID_H * inset) + px(PAD),
+    x: px(gw * inset) + px(PAD),
+    top: px(gh * inset) + px(PAD),
   };
   safe.bottom = H - safe.top;
+  // Shorts lay the title, channel name and buttons over the lower part of the
+  // frame; keep the type clear of the bottom ~22%.
+  if (vertical) safe.bottom = Math.min(safe.bottom, px(gh * 0.78));
   safe.w = W - safe.x * 2;
 
   /**
@@ -150,13 +166,13 @@ export function createCanvas(scale) {
       .toBuffer();
 
   const render = async (dest, layers) => {
-    await sharp(Buffer.from(backgroundSvg(W, H)))
+    await sharp(Buffer.from(backgroundSvg(W, H, vertical)))
       .composite(layers)
       .png({ compressionLevel: 9 })
       .toFile(dest);
-    console.log(`wrote ${dest} (${W}x${H}, ${SCALE}x a 1080p frame)`);
+    console.log(`wrote ${dest} (${W}x${H}, ${SCALE}x a ${vertical ? "1080x1920" : "1080p"} frame)`);
     console.log(
-      `drop it on a 1080p timeline at ${(100 / SCALE).toFixed(0)}% and push in to 100% for a zoom with no softening`,
+      `drop it on a ${vertical ? "1080x1920" : "1080p"} timeline at ${(100 / SCALE).toFixed(0)}% and push in to 100% for a zoom with no softening`,
     );
   };
 
