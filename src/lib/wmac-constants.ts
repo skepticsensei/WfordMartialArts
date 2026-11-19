@@ -238,6 +238,10 @@ export const INSTRUCTORS: {
         url: "https://youtu.be/R3aLS0L5lYU",
       },
       {
+        label: "3 Levels of Being an Uke: Internal Mechanics & Center Control - Windsong Dojo Seminar 2025 (YouTube)",
+        url: "https://youtu.be/7HNwlSm18FM",
+      },
+      {
         label: "Interview on Aiki in Aikido and Daito-ryu (MAYTT, 2024)",
         url: "https://maytt.home.blog/2024/05/02/interview-with-longtime-aiki-practitioner-nathan-himes-aiki-in-aikido-and-daito-ryu/",
       },
