@@ -234,12 +234,12 @@ export const INSTRUCTORS: {
     ],
     media: [
       {
-        label: "Developing Stronger Connection - 2024 Aiki Workshop (YouTube)",
-        url: "https://youtu.be/R3aLS0L5lYU",
+        label: "Internal Mechanics & Center Control - Windsong Dojo Seminar 2025 (YouTube)",
+        url: "https://youtu.be/7HNwlSm18FM",
       },
       {
-        label: "3 Levels of Being an Uke: Internal Mechanics & Center Control - Windsong Dojo Seminar 2025 (YouTube)",
-        url: "https://youtu.be/7HNwlSm18FM",
+        label: "Developing Stronger Connection - 2024 Aiki Workshop (YouTube)",
+        url: "https://youtu.be/R3aLS0L5lYU",
       },
       {
         label: "Interview on Aiki in Aikido and Daito-ryu (MAYTT, 2024)",
